@@ -1,0 +1,739 @@
+2023-11-03 14:08:47 [background-preinit] INFO  o.h.v.i.u.Version                                  - HV000001: Hibernate Validator 6.2.0.Final 
+2023-11-03 14:08:47 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Starting BanVeXemPhimApplication using Java 11.0.19 on LAPTOP-F840DCUN with PID 11316 (C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim\target\classes started by ACER in C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim) 
+2023-11-03 14:08:47 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - No active profile set, falling back to default profiles: default 
+2023-11-03 14:08:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2023-11-03 14:08:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor    - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2023-11-03 14:08:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2023-11-03 14:08:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 139 ms. Found 5 JPA repository interfaces. 
+2023-11-03 14:08:50 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2023-11-03 14:08:50 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2023-11-03 14:08:50 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2023-11-03 14:08:50 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+2023-11-03 14:08:50 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2023-11-03 14:08:50 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 3279 ms 
+2023-11-03 14:08:50 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Starting... 
+2023-11-03 14:08:51 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Start completed. 
+2023-11-03 14:08:51 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2023-11-03 14:08:51 [restartedMain] INFO  o.h.Version                                        - HHH000412: Hibernate ORM core version 5.6.1.Final 
+2023-11-03 14:08:52 [restartedMain] INFO  o.h.a.c.Version                                    - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2023-11-03 14:08:52 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2023-11-03 14:08:53 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2023-11-03 14:08:53 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 14:08:54 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2023-11-03 14:08:55 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3341bd82, org.springframework.security.web.context.SecurityContextPersistenceFilter@68d9e732, org.springframework.security.web.header.HeaderWriterFilter@f8a3e3a, org.springframework.web.filter.CorsFilter@26ab6953, org.springframework.security.web.authentication.logout.LogoutFilter@1ef140f6, com.vti.config.authentication.JWTAuthenticationFilter@206cafba, com.vti.config.authentication.JWTAuthorizationFilter@1f6410e6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@79374ec0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2efd4e87, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d36691b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21770325, org.springframework.security.web.session.SessionManagementFilter@425fb7b9, org.springframework.security.web.access.ExceptionTranslationFilter@2cbdf7ca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e5deb33] 
+2023-11-03 14:08:56 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2023-11-03 14:08:56 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2023-11-03 14:08:56 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2023-11-03 14:08:56 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Started BanVeXemPhimApplication in 9.858 seconds (JVM running for 11.677) 
+2023-11-03 14:08:59 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2023-11-03 14:08:59 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet                          - Initializing Servlet 'dispatcherServlet' 
+2023-11-03 14:08:59 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet                          - Completed initialization in 2 ms 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] WARN  o.a.c.u.SessionIdGeneratorBase                     - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [275] milliseconds. 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] DEBUG o.h.SQL                                            - 
+    select
+        filmschedu0_.schedule_id as schedule1_1_,
+        filmschedu0_.film_id as film_id4_1_,
+        filmschedu0_.`seat_number` as seat_num2_1_,
+        filmschedu0_.time_slot as time_slo3_1_ 
+    from
+        `Film_Schedule` filmschedu0_ 
+    where
+        filmschedu0_.schedule_id in (
+            ? , ? , ?
+        ) 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [SMALLINT] - [1] 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [2] as [SMALLINT] - [2] 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [3] as [SMALLINT] - [3] 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as film_id1_0_0_,
+        film0_.actors as actors2_0_0_,
+        film0_.description as descript3_0_0_,
+        film0_.directors as director4_0_0_,
+        film0_.duration as duration5_0_0_,
+        film0_.genre as genre6_0_0_,
+        film0_.name as name7_0_0_,
+        film0_.poster as poster8_0_0_,
+        film0_.release_date as release_9_0_0_,
+        film0_.ticket_price as ticket_10_0_0_,
+        film0_.creator_id as creator11_0_0_,
+        user1_.user_id as user_id1_4_1_,
+        user1_.email as email2_4_1_,
+        user1_.firstname as firstnam3_4_1_,
+        user1_.lastname as lastname4_4_1_,
+        user1_.password as password5_4_1_,
+        user1_.`role` as role6_4_1_,
+        user1_.status as status7_4_1_,
+        user1_.username as username8_4_1_ 
+    from
+        `Film` film0_ 
+    left outer join
+        `User` user1_ 
+            on film0_.creator_id=user1_.user_id 
+    where
+        film0_.film_id=? 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [INTEGER] - [1] 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as film_id1_0_0_,
+        film0_.actors as actors2_0_0_,
+        film0_.description as descript3_0_0_,
+        film0_.directors as director4_0_0_,
+        film0_.duration as duration5_0_0_,
+        film0_.genre as genre6_0_0_,
+        film0_.name as name7_0_0_,
+        film0_.poster as poster8_0_0_,
+        film0_.release_date as release_9_0_0_,
+        film0_.ticket_price as ticket_10_0_0_,
+        film0_.creator_id as creator11_0_0_,
+        user1_.user_id as user_id1_4_1_,
+        user1_.email as email2_4_1_,
+        user1_.firstname as firstnam3_4_1_,
+        user1_.lastname as lastname4_4_1_,
+        user1_.password as password5_4_1_,
+        user1_.`role` as role6_4_1_,
+        user1_.status as status7_4_1_,
+        user1_.username as username8_4_1_ 
+    from
+        `Film` film0_ 
+    left outer join
+        `User` user1_ 
+            on film0_.creator_id=user1_.user_id 
+    where
+        film0_.film_id=? 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [INTEGER] - [2] 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as film_id1_0_0_,
+        film0_.actors as actors2_0_0_,
+        film0_.description as descript3_0_0_,
+        film0_.directors as director4_0_0_,
+        film0_.duration as duration5_0_0_,
+        film0_.genre as genre6_0_0_,
+        film0_.name as name7_0_0_,
+        film0_.poster as poster8_0_0_,
+        film0_.release_date as release_9_0_0_,
+        film0_.ticket_price as ticket_10_0_0_,
+        film0_.creator_id as creator11_0_0_,
+        user1_.user_id as user_id1_4_1_,
+        user1_.email as email2_4_1_,
+        user1_.firstname as firstnam3_4_1_,
+        user1_.lastname as lastname4_4_1_,
+        user1_.password as password5_4_1_,
+        user1_.`role` as role6_4_1_,
+        user1_.status as status7_4_1_,
+        user1_.username as username8_4_1_ 
+    from
+        `Film` film0_ 
+    left outer join
+        `User` user1_ 
+            on film0_.creator_id=user1_.user_id 
+    where
+        film0_.film_id=? 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [INTEGER] - [3] 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] DEBUG o.h.SQL                                            - 
+    delete 
+    from
+        `Film_Schedule` 
+    where
+        schedule_id=? 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [SMALLINT] - [1] 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] WARN  o.h.e.j.s.SqlExceptionHelper                       - SQL Error: 1451, SQLState: 23000 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] ERROR o.h.e.j.s.SqlExceptionHelper                       - Cannot delete or update a parent row: a foreign key constraint fails (`ql_ban_ve_xem_phim`.`ticket`, CONSTRAINT `ticket_ibfk_2` FOREIGN KEY (`schedule_id`) REFERENCES `film_schedule` (`schedule_id`)) 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] INFO  o.h.e.j.b.i.AbstractBatchImpl                      - HHH000010: On release of batch it still contained JDBC statements 
+2023-11-03 14:09:00 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause 
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ql_ban_ve_xem_phim`.`ticket`, CONSTRAINT `ticket_ibfk_2` FOREIGN KEY (`schedule_id`) REFERENCES `film_schedule` (`schedule_id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3698) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3958) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:123) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[?:?]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1416) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:507) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3299) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2434) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.6.1.Final.jar:5.6.1.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.vti.service.FilmScheduleService$$EnhancerBySpringCGLIB$$9fdc289e.deleteFilmSchedules(<generated>) ~[classes/:?]
+	at com.vti.controller.FilmScheduleController.deleteGroups(FilmScheduleController.java:27) ~[classes/:?]
+	at com.vti.controller.FilmScheduleController$$FastClassBySpringCGLIB$$b49a8679.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:123) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.vti.controller.FilmScheduleController$$EnhancerBySpringCGLIB$$5382f4c8.deleteGroups(<generated>) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[tomcat-embed-core-9.0.55.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.55.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:150) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at com.vti.config.authentication.JWTAuthorizationFilter.doFilter(JWTAuthorizationFilter.java:26) ~[classes/:?]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.6.0.jar:5.6.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+2023-11-03 14:21:20 [Thread-4] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 14:21:20 [Thread-4] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown initiated... 
+2023-11-03 14:21:20 [Thread-4] INFO  c.z.h.HikariDataSource                             - HikariPool-1 - Shutdown completed. 
+2023-11-03 14:21:20 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Starting BanVeXemPhimApplication using Java 11.0.19 on LAPTOP-F840DCUN with PID 11316 (C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim\target\classes started by ACER in C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim) 
+2023-11-03 14:21:20 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - No active profile set, falling back to default profiles: default 
+2023-11-03 14:21:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2023-11-03 14:21:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces. 
+2023-11-03 14:21:21 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2023-11-03 14:21:21 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2023-11-03 14:21:21 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2023-11-03 14:21:21 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+2023-11-03 14:21:21 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2023-11-03 14:21:21 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 837 ms 
+2023-11-03 14:21:21 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Starting... 
+2023-11-03 14:21:21 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Start completed. 
+2023-11-03 14:21:21 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2023-11-03 14:21:21 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2023-11-03 14:21:22 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2023-11-03 14:21:22 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 14:21:22 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2023-11-03 14:21:23 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31d44964, org.springframework.security.web.context.SecurityContextPersistenceFilter@53590715, org.springframework.security.web.header.HeaderWriterFilter@3c4ee6c2, org.springframework.web.filter.CorsFilter@19ec9f3a, org.springframework.security.web.authentication.logout.LogoutFilter@7542fbb2, com.vti.config.authentication.JWTAuthenticationFilter@21465605, com.vti.config.authentication.JWTAuthorizationFilter@52faefae, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@58af28de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@330f74f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78bcfca0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@417603fc, org.springframework.security.web.session.SessionManagementFilter@6c1f41b1, org.springframework.security.web.access.ExceptionTranslationFilter@34c7f54, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@48688584] 
+2023-11-03 14:21:23 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2023-11-03 14:21:23 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2023-11-03 14:21:23 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2023-11-03 14:21:23 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Started BanVeXemPhimApplication in 2.832 seconds (JVM running for 758.553) 
+2023-11-03 14:21:23 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2023-11-03 14:39:17 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2023-11-03 14:39:17 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Initializing Servlet 'dispatcherServlet' 
+2023-11-03 14:39:17 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Completed initialization in 3 ms 
+2023-11-03 14:39:17 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    select
+        filmschedu0_.schedule_id as schedule1_1_,
+        filmschedu0_.film_id as film_id4_1_,
+        filmschedu0_.`seat_number` as seat_num2_1_,
+        filmschedu0_.time_slot as time_slo3_1_ 
+    from
+        `Film_Schedule` filmschedu0_ 
+    where
+        filmschedu0_.schedule_id in (
+            ? , ? , ?
+        ) 
+2023-11-03 14:39:17 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [SMALLINT] - [1] 
+2023-11-03 14:39:17 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [2] as [SMALLINT] - [2] 
+2023-11-03 14:39:17 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [3] as [SMALLINT] - [3] 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as film_id1_0_0_,
+        film0_.actors as actors2_0_0_,
+        film0_.description as descript3_0_0_,
+        film0_.directors as director4_0_0_,
+        film0_.duration as duration5_0_0_,
+        film0_.genre as genre6_0_0_,
+        film0_.name as name7_0_0_,
+        film0_.poster as poster8_0_0_,
+        film0_.release_date as release_9_0_0_,
+        film0_.ticket_price as ticket_10_0_0_,
+        film0_.creator_id as creator11_0_0_,
+        user1_.user_id as user_id1_4_1_,
+        user1_.email as email2_4_1_,
+        user1_.firstname as firstnam3_4_1_,
+        user1_.lastname as lastname4_4_1_,
+        user1_.password as password5_4_1_,
+        user1_.`role` as role6_4_1_,
+        user1_.status as status7_4_1_,
+        user1_.username as username8_4_1_ 
+    from
+        `Film` film0_ 
+    left outer join
+        `User` user1_ 
+            on film0_.creator_id=user1_.user_id 
+    where
+        film0_.film_id=? 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [INTEGER] - [1] 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as film_id1_0_0_,
+        film0_.actors as actors2_0_0_,
+        film0_.description as descript3_0_0_,
+        film0_.directors as director4_0_0_,
+        film0_.duration as duration5_0_0_,
+        film0_.genre as genre6_0_0_,
+        film0_.name as name7_0_0_,
+        film0_.poster as poster8_0_0_,
+        film0_.release_date as release_9_0_0_,
+        film0_.ticket_price as ticket_10_0_0_,
+        film0_.creator_id as creator11_0_0_,
+        user1_.user_id as user_id1_4_1_,
+        user1_.email as email2_4_1_,
+        user1_.firstname as firstnam3_4_1_,
+        user1_.lastname as lastname4_4_1_,
+        user1_.password as password5_4_1_,
+        user1_.`role` as role6_4_1_,
+        user1_.status as status7_4_1_,
+        user1_.username as username8_4_1_ 
+    from
+        `Film` film0_ 
+    left outer join
+        `User` user1_ 
+            on film0_.creator_id=user1_.user_id 
+    where
+        film0_.film_id=? 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [INTEGER] - [2] 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as film_id1_0_0_,
+        film0_.actors as actors2_0_0_,
+        film0_.description as descript3_0_0_,
+        film0_.directors as director4_0_0_,
+        film0_.duration as duration5_0_0_,
+        film0_.genre as genre6_0_0_,
+        film0_.name as name7_0_0_,
+        film0_.poster as poster8_0_0_,
+        film0_.release_date as release_9_0_0_,
+        film0_.ticket_price as ticket_10_0_0_,
+        film0_.creator_id as creator11_0_0_,
+        user1_.user_id as user_id1_4_1_,
+        user1_.email as email2_4_1_,
+        user1_.firstname as firstnam3_4_1_,
+        user1_.lastname as lastname4_4_1_,
+        user1_.password as password5_4_1_,
+        user1_.`role` as role6_4_1_,
+        user1_.status as status7_4_1_,
+        user1_.username as username8_4_1_ 
+    from
+        `Film` film0_ 
+    left outer join
+        `User` user1_ 
+            on film0_.creator_id=user1_.user_id 
+    where
+        film0_.film_id=? 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [INTEGER] - [3] 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    delete 
+    from
+        `Film_Schedule` 
+    where
+        schedule_id=? 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [SMALLINT] - [1] 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    delete 
+    from
+        `Film_Schedule` 
+    where
+        schedule_id=? 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [SMALLINT] - [2] 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] DEBUG o.h.SQL                                            - 
+    delete 
+    from
+        `Film_Schedule` 
+    where
+        schedule_id=? 
+2023-11-03 14:39:18 [http-nio-8080-exec-2] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [SMALLINT] - [3] 
+2023-11-03 15:21:43 [HikariPool-2 housekeeper] WARN  c.z.h.p.HikariPool                                 - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=25m54s3ms146µs300ns). 
+2023-11-03 15:22:34 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 15:22:34 [Thread-7] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Shutdown initiated... 
+2023-11-03 15:22:34 [Thread-7] INFO  c.z.h.HikariDataSource                             - HikariPool-2 - Shutdown completed. 
+2023-11-03 15:22:35 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Starting BanVeXemPhimApplication using Java 11.0.19 on LAPTOP-F840DCUN with PID 11316 (C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim\target\classes started by ACER in C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim) 
+2023-11-03 15:22:35 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - No active profile set, falling back to default profiles: default 
+2023-11-03 15:22:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2023-11-03 15:22:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 75 ms. Found 5 JPA repository interfaces. 
+2023-11-03 15:22:36 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2023-11-03 15:22:36 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2023-11-03 15:22:36 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2023-11-03 15:22:36 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+2023-11-03 15:22:37 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2023-11-03 15:22:37 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 1891 ms 
+2023-11-03 15:22:37 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Starting... 
+2023-11-03 15:22:37 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Start completed. 
+2023-11-03 15:22:37 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2023-11-03 15:22:37 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2023-11-03 15:22:37 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2023-11-03 15:22:37 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 15:22:37 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2023-11-03 15:22:40 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4543d5b9, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d0835e8, org.springframework.security.web.header.HeaderWriterFilter@2d784bc7, org.springframework.web.filter.CorsFilter@4852a1c2, org.springframework.security.web.authentication.logout.LogoutFilter@7abf6830, com.vti.config.authentication.JWTAuthenticationFilter@b270388, com.vti.config.authentication.JWTAuthorizationFilter@3324d2df, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@54401643, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1976e313, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@763fa589, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6811271f, org.springframework.security.web.session.SessionManagementFilter@6c7b8a15, org.springframework.security.web.access.ExceptionTranslationFilter@50c69b89, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@74d8a204] 
+2023-11-03 15:22:40 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2023-11-03 15:22:40 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2023-11-03 15:22:40 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2023-11-03 15:22:41 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Started BanVeXemPhimApplication in 6.611 seconds (JVM running for 4439.342) 
+2023-11-03 15:22:41 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2023-11-03 15:30:00 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2023-11-03 15:30:00 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Initializing Servlet 'dispatcherServlet' 
+2023-11-03 15:30:00 [http-nio-8080-exec-2] INFO  o.s.w.s.DispatcherServlet                          - Completed initialization in 3 ms 
+2023-11-03 15:30:00 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver        - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2023-10-27 00:00:00": not a valid representation (error: Failed to parse Date value '2023-10-27 00:00:00': Cannot parse date "2023-10-27 00:00:00": while it seems to fit format 'yyyy-MM-dd'T'HH:mm:ss.SSSX', parsing fails (leniency? null)); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2023-10-27 00:00:00": not a valid representation (error: Failed to parse Date value '2023-10-27 00:00:00': Cannot parse date "2023-10-27 00:00:00": while it seems to fit format 'yyyy-MM-dd'T'HH:mm:ss.SSSX', parsing fails (leniency? null))<LF> at [Source: (PushbackInputStream); line: 8, column: 21] (through reference chain: com.vti.form.film.CreatingFilmForm["releaseDate"])] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] DEBUG o.h.SQL                                            - 
+    select
+        user0_.user_id as user_id1_4_,
+        user0_.email as email2_4_,
+        user0_.firstname as firstnam3_4_,
+        user0_.lastname as lastname4_4_,
+        user0_.password as password5_4_,
+        user0_.`role` as role6_4_,
+        user0_.status as status7_4_,
+        user0_.username as username8_4_ 
+    from
+        `User` user0_ 
+    where
+        user0_.username=? 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [quanghieu] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] DEBUG o.h.SQL                                            - 
+    insert 
+    into
+        `
+        Film` (
+            actors, description, directors, duration, genre, name, poster, release_date, ticket_price, creator_id
+        ) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Thanh đẹp trai vip propro] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [2] as [VARCHAR] - [câu chuyện kể về Thanh đẹp trai] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [3] as [VARCHAR] - [Thanh đẹp trai] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [4] as [VARCHAR] - [vô hạn] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [5] as [VARCHAR] - [giật gân] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [6] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [7] as [VARCHAR] - [a link] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [8] as [TIMESTAMP] - [Fri Nov 03 15:30:12 ICT 2023] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [9] as [INTEGER] - [100000000] 
+2023-11-03 15:30:12 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [10] as [INTEGER] - [2] 
+2023-11-03 15:31:56 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver        - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "27-10-2023": not a valid representation (error: Failed to parse Date value '27-10-2023': Cannot parse date "27-10-2023": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "27-10-2023": not a valid representation (error: Failed to parse Date value '27-10-2023': Cannot parse date "27-10-2023": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))<LF> at [Source: (PushbackInputStream); line: 8, column: 21] (through reference chain: com.vti.form.film.CreatingFilmForm["releaseDate"])] 
+2023-11-03 15:32:06 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver        - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "20232023-10-2727": not a valid representation (error: Failed to parse Date value '20232023-10-2727': Cannot parse date "20232023-10-2727": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "20232023-10-2727": not a valid representation (error: Failed to parse Date value '20232023-10-2727': Cannot parse date "20232023-10-2727": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))<LF> at [Source: (PushbackInputStream); line: 8, column: 21] (through reference chain: com.vti.form.film.CreatingFilmForm["releaseDate"])] 
+2023-11-03 15:32:08 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver        - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "20232023-10-27": not a valid representation (error: Failed to parse Date value '20232023-10-27': Cannot parse date "20232023-10-27": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "20232023-10-27": not a valid representation (error: Failed to parse Date value '20232023-10-27': Cannot parse date "20232023-10-27": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))<LF> at [Source: (PushbackInputStream); line: 8, column: 21] (through reference chain: com.vti.form.film.CreatingFilmForm["releaseDate"])] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] DEBUG o.h.SQL                                            - 
+    select
+        user0_.user_id as user_id1_4_,
+        user0_.email as email2_4_,
+        user0_.firstname as firstnam3_4_,
+        user0_.lastname as lastname4_4_,
+        user0_.password as password5_4_,
+        user0_.`role` as role6_4_,
+        user0_.status as status7_4_,
+        user0_.username as username8_4_ 
+    from
+        `User` user0_ 
+    where
+        user0_.username=? 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [quanghieu] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] DEBUG o.h.SQL                                            - 
+    insert 
+    into
+        `
+        Film` (
+            actors, description, directors, duration, genre, name, poster, release_date, ticket_price, creator_id
+        ) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Thanh đẹp trai vip propro] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [2] as [VARCHAR] - [câu chuyện kể về Thanh đẹp trai] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [3] as [VARCHAR] - [Thanh đẹp trai] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [4] as [VARCHAR] - [vô hạn] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [5] as [VARCHAR] - [giật gân] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [6] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [7] as [VARCHAR] - [a link] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [8] as [TIMESTAMP] - [Fri Nov 03 15:32:11 ICT 2023] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [9] as [INTEGER] - [100000000] 
+2023-11-03 15:32:11 [http-nio-8080-exec-3] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [10] as [INTEGER] - [2] 
+2023-11-03 15:33:08 [http-nio-8080-exec-4] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:33:08 [http-nio-8080-exec-4] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:33:08 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver        - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public org.springframework.http.ResponseEntity<?> com.vti.controller.FilmController.createFilm(org.springframework.security.core.Authentication,com.vti.form.film.CreatingFilmForm): [Field error in object 'creatingFilmForm' on field 'releaseDate': rejected value [null]; codes [NotNull.creatingFilmForm.releaseDate,NotNull.releaseDate,NotNull.java.util.Date,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [creatingFilmForm.releaseDate,releaseDate]; arguments []; default message [releaseDate]]; default message [Tên đạo diễn không được để trống]] ] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] DEBUG o.h.SQL                                            - 
+    select
+        user0_.user_id as user_id1_4_,
+        user0_.email as email2_4_,
+        user0_.firstname as firstnam3_4_,
+        user0_.lastname as lastname4_4_,
+        user0_.password as password5_4_,
+        user0_.`role` as role6_4_,
+        user0_.status as status7_4_,
+        user0_.username as username8_4_ 
+    from
+        `User` user0_ 
+    where
+        user0_.username=? 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [quanghieu] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] DEBUG o.h.SQL                                            - 
+    insert 
+    into
+        `
+        Film` (
+            actors, description, directors, duration, genre, name, poster, release_date, ticket_price, creator_id
+        ) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Thanh đẹp trai vip propro] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [2] as [VARCHAR] - [câu chuyện kể về Thanh đẹp trai] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [3] as [VARCHAR] - [Thanh đẹp trai] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [4] as [VARCHAR] - [vô hạn] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [5] as [VARCHAR] - [giật gân] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [6] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [7] as [VARCHAR] - [a link] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [8] as [TIMESTAMP] - [Fri Nov 03 15:33:13 ICT 2023] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [9] as [INTEGER] - [100000000] 
+2023-11-03 15:33:13 [http-nio-8080-exec-6] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [10] as [INTEGER] - [2] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] DEBUG o.h.SQL                                            - 
+    select
+        film0_.film_id as col_0_0_ 
+    from
+        `Film` film0_ 
+    where
+        film0_.name=? limit ? 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] DEBUG o.h.SQL                                            - 
+    select
+        user0_.user_id as user_id1_4_,
+        user0_.email as email2_4_,
+        user0_.firstname as firstnam3_4_,
+        user0_.lastname as lastname4_4_,
+        user0_.password as password5_4_,
+        user0_.`role` as role6_4_,
+        user0_.status as status7_4_,
+        user0_.username as username8_4_ 
+    from
+        `User` user0_ 
+    where
+        user0_.username=? 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [quanghieu] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] DEBUG o.h.SQL                                            - 
+    insert 
+    into
+        `
+        Film` (
+            actors, description, directors, duration, genre, name, poster, release_date, ticket_price, creator_id
+        ) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [1] as [VARCHAR] - [Thanh đẹp trai vip propro] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [2] as [VARCHAR] - [câu chuyện kể về Thanh đẹp trai] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [3] as [VARCHAR] - [Thanh đẹp trai] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [4] as [VARCHAR] - [vô hạn] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [5] as [VARCHAR] - [giật gân] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [6] as [VARCHAR] - [Nam anh đẹp trai vãi lon] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [7] as [VARCHAR] - [a link] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [8] as [TIMESTAMP] - [Fri Nov 03 15:34:12 ICT 2023] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [9] as [INTEGER] - [100000000] 
+2023-11-03 15:34:12 [http-nio-8080-exec-7] TRACE o.h.t.d.s.BasicBinder                              - binding parameter [10] as [INTEGER] - [2] 
+2023-11-03 15:37:25 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 15:37:25 [Thread-11] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Shutdown initiated... 
+2023-11-03 15:37:25 [Thread-11] INFO  c.z.h.HikariDataSource                             - HikariPool-3 - Shutdown completed. 
+2023-11-03 15:37:26 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Starting BanVeXemPhimApplication using Java 11.0.19 on LAPTOP-F840DCUN with PID 11316 (C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim\target\classes started by ACER in C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim) 
+2023-11-03 15:37:26 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - No active profile set, falling back to default profiles: default 
+2023-11-03 15:37:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2023-11-03 15:37:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 401 ms. Found 5 JPA repository interfaces. 
+2023-11-03 15:37:30 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2023-11-03 15:37:30 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2023-11-03 15:37:30 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2023-11-03 15:37:30 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+2023-11-03 15:37:31 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2023-11-03 15:37:31 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 4920 ms 
+2023-11-03 15:37:31 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Starting... 
+2023-11-03 15:37:31 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Start completed. 
+2023-11-03 15:37:31 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2023-11-03 15:37:31 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2023-11-03 15:37:31 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2023-11-03 15:37:31 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 15:37:31 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2023-11-03 15:37:32 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56c4a1ca, org.springframework.security.web.context.SecurityContextPersistenceFilter@e9031b7, org.springframework.security.web.header.HeaderWriterFilter@6c253a41, org.springframework.web.filter.CorsFilter@65ea6b95, org.springframework.security.web.authentication.logout.LogoutFilter@2c48833, com.vti.config.authentication.JWTAuthenticationFilter@2047cca, com.vti.config.authentication.JWTAuthorizationFilter@ccd0952, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6e6221a3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58e96967, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d5ba709, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ff433f0, org.springframework.security.web.session.SessionManagementFilter@5578aca1, org.springframework.security.web.access.ExceptionTranslationFilter@309cd674, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ca64ecf] 
+2023-11-03 15:37:32 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2023-11-03 15:37:32 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2023-11-03 15:37:32 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2023-11-03 15:37:32 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Started BanVeXemPhimApplication in 6.956 seconds (JVM running for 5330.54) 
+2023-11-03 15:37:32 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
+2023-11-03 15:37:34 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 15:37:34 [Thread-15] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Shutdown initiated... 
+2023-11-03 15:37:34 [Thread-15] INFO  c.z.h.HikariDataSource                             - HikariPool-4 - Shutdown completed. 
+2023-11-03 15:37:34 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Starting BanVeXemPhimApplication using Java 11.0.19 on LAPTOP-F840DCUN with PID 11316 (C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim\target\classes started by ACER in C:\Users\ACER\Desktop\VTI\Spring\Web_ban_ve_xem_phim) 
+2023-11-03 15:37:34 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - No active profile set, falling back to default profiles: default 
+2023-11-03 15:37:35 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2023-11-03 15:37:35 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces. 
+2023-11-03 15:37:35 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat initialized with port(s): 8080 (http) 
+2023-11-03 15:37:35 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Initializing ProtocolHandler ["http-nio-8080"] 
+2023-11-03 15:37:35 [restartedMain] INFO  o.a.c.c.StandardService                            - Starting service [Tomcat] 
+2023-11-03 15:37:35 [restartedMain] INFO  o.a.c.c.StandardEngine                             - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+2023-11-03 15:37:35 [restartedMain] INFO  o.a.c.c.C.[.[.[/]                                  - Initializing Spring embedded WebApplicationContext 
+2023-11-03 15:37:35 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 1343 ms 
+2023-11-03 15:37:36 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-5 - Starting... 
+2023-11-03 15:37:36 [restartedMain] INFO  c.z.h.HikariDataSource                             - HikariPool-5 - Start completed. 
+2023-11-03 15:37:36 [restartedMain] INFO  o.h.j.i.u.LogHelper                                - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2023-11-03 15:37:36 [restartedMain] INFO  o.h.d.Dialect                                      - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2023-11-03 15:37:36 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2023-11-03 15:37:36 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2023-11-03 15:37:36 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2023-11-03 15:37:38 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain                 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22f578e5, org.springframework.security.web.context.SecurityContextPersistenceFilter@555651f2, org.springframework.security.web.header.HeaderWriterFilter@3a1763b9, org.springframework.web.filter.CorsFilter@757eb2aa, org.springframework.security.web.authentication.logout.LogoutFilter@5ab03211, com.vti.config.authentication.JWTAuthenticationFilter@47e4bb2b, com.vti.config.authentication.JWTAuthorizationFilter@7ae7a396, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6d638d46, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e9bda81, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f107240, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73dcde7f, org.springframework.security.web.session.SessionManagementFilter@3578f28b, org.springframework.security.web.access.ExceptionTranslationFilter@6aee371e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d29aa86] 
+2023-11-03 15:37:38 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer                 - LiveReload server is running on port 35729 
+2023-11-03 15:37:38 [restartedMain] INFO  o.a.c.h.Http11NioProtocol                          - Starting ProtocolHandler ["http-nio-8080"] 
+2023-11-03 15:37:38 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer                        - Tomcat started on port(s): 8080 (http) with context path '' 
+2023-11-03 15:37:39 [restartedMain] INFO  c.v.BanVeXemPhimApplication                        - Started BanVeXemPhimApplication in 4.758 seconds (JVM running for 5336.999) 
+2023-11-03 15:37:39 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener  - Condition evaluation unchanged 
