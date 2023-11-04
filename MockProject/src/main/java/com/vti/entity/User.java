@@ -54,7 +54,7 @@ public class User implements Serializable{
 	private String fullName;
 	
 	@Column(name = "role", nullable = false)
-	private String role = "User";
+	private String role;
 	
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "`status`", nullable = false)

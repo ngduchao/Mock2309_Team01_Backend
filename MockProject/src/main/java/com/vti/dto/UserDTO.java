@@ -2,6 +2,9 @@ package com.vti.dto;
 
 import java.util.List;
 
+import com.vti.entity.Ticket.TicketKey;
+import com.vti.entity.User;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,7 +26,27 @@ public class UserDTO {
 	
 	private String role;
 	
-	private List<FilmDTO> films;
+	private List<FilmInfoDTO> films;
 	
 	private List<TicketDTO> tickets;
+	
+	@Data
+	@NoArgsConstructor
+	public static class FilmInfoDTO{
+		
+		private Integer filmId;
+		
+		private String name;
+	}
+	
+	@Data
+	@NoArgsConstructor
+	public static class TicketDTO{
+		
+		private TicketKey id;
+		
+		private Integer quantity;
+		
+		private Integer total;
+	}
 }
