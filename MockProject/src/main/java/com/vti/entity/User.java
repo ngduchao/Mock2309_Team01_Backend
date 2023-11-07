@@ -25,7 +25,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "`User`")
 @Data
-@NoArgsConstructor
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -54,7 +53,7 @@ public class User implements Serializable{
 	private String fullName;
 	
 	@Column(name = "role", nullable = false)
-	private String role;
+	private String role = "User";
 	
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "`status`", nullable = false)
@@ -70,4 +69,28 @@ public class User implements Serializable{
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Ticket> tickets;
 	
+	public User() {
+		
+	}
+
+	public User(Integer id, String username, String email, String password, String firstName, String lastName,
+			String role, UserStatus status) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.role = role;
+		this.status = status;
+	}
+	
+	public User(String userName, String email, String password, String firstName, String lastName) {
+		this.username = userName;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 }

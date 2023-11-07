@@ -38,7 +38,7 @@ public class UserSpecification {
 		}
 		
 		if(filter.getRole() != null) {
-			CustomSpecification role = new CustomSpecification("rool", filter.getRole());
+			CustomSpecification role = new CustomSpecification("role", filter.getRole());
 			where = where.and(role);
 		}
 		
@@ -78,7 +78,7 @@ class CustomSpecification implements Specification<User>{
 		}
 		
 		if (field.equalsIgnoreCase("role")) {
-			return criteriaBuilder.equal(root.get("role"), value);
+			return criteriaBuilder.like(root.get("role"), "%" + value.toString() + "%");
 		}
 		
 		return null;
