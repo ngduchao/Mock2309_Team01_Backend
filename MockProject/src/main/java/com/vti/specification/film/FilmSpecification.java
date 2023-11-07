@@ -69,7 +69,7 @@ class CustomSpecification implements Specification<Film>{
 		}
 		
 		if(field.equalsIgnoreCase("genre")) {
-			return criteriaBuilder.equal(root.get("genre"), "%" + value.toString() + "%");
+			return criteriaBuilder.like(root.get("genre"), "%" + value.toString() + "%");
 		}
 		
 		return null;

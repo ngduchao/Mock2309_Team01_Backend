@@ -49,4 +49,8 @@ public class UserDTO {
 		
 		private Integer total;
 	}
+	
+	public User toEntity() {
+		return new User(username, email, password, firstName, lastName);
+	}
 }

@@ -3,8 +3,10 @@ package com.vti.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.vti.entity.User;
+import com.vti.entity.UserStatus;
 import com.vti.form.user.UpdatingUserForm;
 
 public interface IUserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User>{
@@ -12,4 +14,13 @@ public interface IUserRepository extends JpaRepository<User, Integer>, JpaSpecif
 	public boolean existsByUsername(String username);
 	
 	public boolean existsByEmail(String email);
+	
+	public User findByUsername(String username);
+	
+	public User findByEmail(String email);
+	
+	@Query("	SELECT 	status 		"
+			+ "	FROM 	User 		"
+			+ " WHERE 	email = :email")
+	public UserStatus findStatusByEmail(@Param("email") String email);
 }
