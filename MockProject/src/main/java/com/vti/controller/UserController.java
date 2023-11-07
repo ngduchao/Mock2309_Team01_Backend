@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vti.dto.UserDTO;
 import com.vti.entity.User;
 import com.vti.filter.UserFilterForm;
+import com.vti.form.user.CreatingUserForm;
 import com.vti.form.user.UpdatingUserForm;
 import com.vti.service.IUserService;
 
@@ -100,7 +101,7 @@ public class UserController {
 	}
 	
 	@PostMapping()
-	public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO dto) {
+	public ResponseEntity<?> createUser(@Valid @RequestBody CreatingUserForm dto) {
 		// create User
 		service.createUser(dto.toEntity());
 
