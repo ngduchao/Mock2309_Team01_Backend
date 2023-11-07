@@ -53,16 +53,35 @@ CREATE TABLE IF NOT EXISTS `Ticket`(
     FOREIGN KEY (`schedule_id`) REFERENCES `Film_schedule`(`schedule_id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+-- Create table Registration_User_Token
+DROP TABLE IF EXISTS 	`Registration_User_Token`;
+CREATE TABLE IF NOT EXISTS `Registration_User_Token` ( 	
+	id 				INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	`token`	 		CHAR(36) NOT NULL UNIQUE,
+	`user_id` 		SMALLINT UNSIGNED NOT NULL,
+	`expiryDate` 	DATETIME NOT NULL
+);
+
+-- Create table Reset_Password_Token
+DROP TABLE IF EXISTS 	`Reset_Password_Token`;
+CREATE TABLE IF NOT EXISTS `Reset_Password_Token` ( 	
+	id 				INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	`token`	 		CHAR(36) NOT NULL UNIQUE,
+	`user_id` 		SMALLINT UNSIGNED NOT NULL,
+	`expiryDate` 	DATETIME NOT NULL
+);
+
+-- password: 123456
 INSERT INTO `User` (`username`, `email`, `password`, `firstname`, `lastname`, `role`, `status`)
-VALUES				('duchao',    'duchao0202@gmail.com', '123456', 'Nguyen', 'Hao', 'Manager',  1),
-					('quanghieu', 'quanghieu@gmail.com',  '123456', 'Quang',  'Hieu', 'Manager', 1),
-                    ('dinhdai',   'dinhdai@gmail.com',    '123456', 'Dinh',   'Dai', 'Manager',  1),
-                    ('hoanggiang', 'hoanggiang@gmail.com', '123456', 'Hoang', 'Giang', 'Manager', 1),
-                    ('truongduong', 'truongduong@gmail.com', '123456', 'Truong', 'Duong', 'Manager', 1),
-                    ('hongphong', 'hongphong@gmail.com', '123456', 'Hong', 'Phong', 'Manager', 1),
-                    ('ngoloi', 'ngoloi@gmail.com', '123456', 'Ngo', 'Loi', 'Manager', 1),
-                    ('nguyenvana', 'nguyena@gmail.com', '123456', 'Nguyen', 'A', 'User', 1),
-                    ('nguyenvanb', 'nguyenb@gmail.com', '123456', 'Nguyen', 'B', 'User', 1);
+VALUES				('duchao',    	'duchao0202@gmail.com', 	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Nguyen', 	'Hao', 		'Admin',  1),
+					('quanghieu', 	'quanghieu@gmail.com',  	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Quang',  	'Hieu', 	'Manager', 1),
+                    ('dinhdai',   	'dinhdai@gmail.com',    	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Dinh',   	'Dai', 		'Manager',  1),
+                    ('hoanggiang', 	'hoanggiang@gmail.com', 	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Hoang', 	'Giang', 	'Manager', 1),
+                    ('truongduong', 'truongduong@gmail.com', 	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Truong', 	'Duong', 	'Manager', 1),
+                    ('hongphong', 	'hongphong@gmail.com', 		'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Hong', 	'Phong', 	'Manager', 1),
+                    ('ngoloi', 		'ngoloi@gmail.com', 		'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Ngo', 		'Loi', 		'Manager', 1),
+                    ('nguyenvana', 	'nguyena@gmail.com', 		'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Nguyen', 	'A', 		'User', 1),
+                    ('nguyenvanb', 	'nguyenb@gmail.com', 		'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Nguyen', 	'B', 		'User', 1);
                      
 INSERT INTO `Film` (`name`, `directors`, `actors`, `genre`, `duration`, `description`, `release_date`, `ticket_price`, `poster`, `creator_id`)
 VALUES				('Năm đêm kinh hoàng', 'Emma Tammi','Matthew Lillard, Josh Hutcherson, Mary Stuart Masterson', 'Kinh Dị', '110 phút', 'Nhân viên bảo vệ Mike bắt đầu làm việc tại Freddy Fazbear pizza...', '2023/10/27', 70000,'https://files.betacorp.vn/files/media%2fimages%2f2023%2f10%2f03%2f700x1000-5demkinhhoang-115804-031023-17.png' , 1),
