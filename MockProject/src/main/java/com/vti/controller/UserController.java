@@ -10,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vti.dto.ProfileDTO;
 import com.vti.dto.UserDTO;
 import com.vti.entity.User;
 import com.vti.filter.UserFilterForm;
@@ -43,6 +47,7 @@ public class UserController {
 	
 	@GetMapping()
 	public ResponseEntity<?> getAllUsers(
+			@PageableDefault(sort = {"id"}, direction = Sort.Direction.ASC) 
 			Pageable pageable,
 			@RequestParam(value = "search", required = false) String search,
 			UserFilterForm filter){
@@ -155,5 +160,22 @@ public class UserController {
 		service.resetPassword(token, newPassword);
 
 		return new ResponseEntity<>("Reset Password success!", HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/profile")
+	public ResponseEntity<?> getUserProfile(Authentication authentication){
+		
+		String username = authentication.getName();
+		
+		User user = service.findUserByUsername(username);
+		
+		ProfileDTO profileDTO = new ProfileDTO(
+				user.getUsername(),
+				user.getEmail(),
+				user.getFirstName(),
+				user.getLastName(),
+				user.getRole().name(),
+				user.getStatus().toString());
+		return new ResponseEntity<>(profileDTO, HttpStatus.OK);
 	}
 }

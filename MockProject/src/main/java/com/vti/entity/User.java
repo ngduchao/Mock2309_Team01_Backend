@@ -16,15 +16,19 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Formula;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "`User`")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -52,8 +56,9 @@ public class User implements Serializable{
 	@Formula("concat(firstName, ' ', lastName)")
 	private String fullName;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "role", nullable = false)
-	private String role = "User";
+	private Role role = Role.User;
 	
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "`status`", nullable = false)
@@ -68,13 +73,28 @@ public class User implements Serializable{
 	@OneToMany(mappedBy = "user1")
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Ticket> tickets;
-	
-	public User() {
-		
+
+	public User(String username, String email, String password, String firstName, String lastName) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	public User(String username, String email, String password, String firstName, String lastName, Role role) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.role = role;
 	}
 
 	public User(Integer id, String username, String email, String password, String firstName, String lastName,
-			String role, UserStatus status) {
+			Role role, UserStatus status) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -86,20 +106,7 @@ public class User implements Serializable{
 		this.status = status;
 	}
 	
-	public User(String userName, String email, String password, String firstName, String lastName) {
-		this.username = userName;
-		this.email = email;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
 	
-	public User(String userName, String email, String password, String firstName, String lastName, String role) {
-		this.username = userName;
-		this.email = email;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.role = role;
-	}
+
+
 }

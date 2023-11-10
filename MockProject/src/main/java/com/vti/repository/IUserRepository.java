@@ -7,7 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 import com.vti.entity.User;
 import com.vti.entity.UserStatus;
-import com.vti.form.user.UpdatingUserForm;
 
 public interface IUserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User>{
 	

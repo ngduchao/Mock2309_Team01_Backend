@@ -1,5 +1,6 @@
 package com.vti.form.user;
 
+import com.vti.entity.Role;
 import com.vti.entity.User;
 
 import lombok.Data;
@@ -19,7 +20,7 @@ public class CreatingUserForm {
 	
 	private String lastName;
 	
-	private String role;
+	private Role role;
 	
 	public User toEntity() {
 		return new User(username, email, password, firstName, lastName, role);
