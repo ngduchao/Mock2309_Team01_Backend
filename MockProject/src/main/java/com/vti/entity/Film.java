@@ -75,8 +75,22 @@ public class Film implements Serializable{
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<FilmSchedule> filmSchedules;
 
-	public Film(String name, String directors, String actors, String genre, String duration, String description,
+	public Film(String name, String directors, String actors, String genre, String duration, String description, Date releaseDate,
 			 Integer ticketPrice, String poster) {
+		super();
+		this.name = name;
+		this.directors = directors;
+		this.actors = actors;
+		this.genre = genre;
+		this.duration = duration;
+		this.description = description;
+		this.releaseDate = releaseDate;
+		this.ticketPrice = ticketPrice;
+		this.poster = poster;
+	}
+
+	public Film(String name, String directors, String actors, String genre, String duration, String description,
+			Integer ticketPrice, String poster) {
 		super();
 		this.name = name;
 		this.directors = directors;
@@ -87,5 +101,7 @@ public class Film implements Serializable{
 		this.ticketPrice = ticketPrice;
 		this.poster = poster;
 	}
-
+	
+	
+	
 }

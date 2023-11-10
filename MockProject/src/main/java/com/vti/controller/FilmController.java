@@ -10,20 +10,26 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vti.dto.FilmDTO;
+import com.vti.dto.UserInfo;
 import com.vti.entity.Film;
+import com.vti.entity.User;
 import com.vti.filter.FilmFilterForm;
 import com.vti.form.film.CreatingFilmForm;
+import com.vti.form.film.UpdatingFilmForm;
 import com.vti.service.IFilmService;
+import com.vti.service.IUserService;
 import com.vti.validation.film.FilmIDExists;
 
 @RestController
@@ -31,6 +37,9 @@ import com.vti.validation.film.FilmIDExists;
 public class FilmController {
 	@Autowired
 	private IFilmService service;
+	
+	@Autowired
+	private IUserService userService;
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -69,9 +78,21 @@ public class FilmController {
 		return new ResponseEntity<>("Delete Successfully!", HttpStatus.OK);
 	}
 	
+	@PutMapping(value = "{id}")
+	public ResponseEntity<?> updateFilm(@PathVariable(name = "id") Integer id, @RequestBody UpdatingFilmForm form){
+		
+		service.updateFilm(id, form);
+		return new ResponseEntity<>("Update Successfully!", HttpStatus.OK);
+	}
+	
 	@PostMapping()
-	public ResponseEntity<?> createFilm(@RequestBody CreatingFilmForm form){
-		service.createFilm(form);
-		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
+	public ResponseEntity<?> createFilm(@RequestBody CreatingFilmForm form, Authentication authentication){
+		
+		String username = authentication.getName();
+		
+		User userInfo = userService.findUserByUsername(username);
+		
+		service.createFilm(userInfo, form);
+		return new ResponseEntity<String>("Create successfully!" + username, HttpStatus.OK);
 	}
 }
