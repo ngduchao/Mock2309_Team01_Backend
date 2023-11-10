@@ -3,6 +3,7 @@ package com.vti.dto;
 import java.util.List;
 
 import com.vti.entity.Ticket.TicketKey;
+import com.vti.entity.Role;
 import com.vti.entity.User;
 
 import lombok.Data;
@@ -24,7 +25,7 @@ public class UserDTO {
 	
 	private String lastName;
 	
-	private String role;
+	private Role role;
 	
 	private List<FilmInfoDTO> films;
 	
