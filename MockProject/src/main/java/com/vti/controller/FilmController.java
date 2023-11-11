@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -46,6 +48,7 @@ public class FilmController {
 	
 	@GetMapping()
 	public ResponseEntity<?> getAllFilms(
+			@PageableDefault(sort = {"name"}, direction = Sort.Direction.ASC)
 			Pageable pagable,
 			@RequestParam(name = "search", required = false) String search,
 			FilmFilterForm filter){
@@ -93,6 +96,6 @@ public class FilmController {
 		User userInfo = userService.findUserByUsername(username);
 		
 		service.createFilm(userInfo, form);
-		return new ResponseEntity<String>("Create successfully!" + username, HttpStatus.OK);
+		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
 }

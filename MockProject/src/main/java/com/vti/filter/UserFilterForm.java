@@ -1,5 +1,7 @@
 package com.vti.filter;
 
+import com.vti.entity.Role;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserFilterForm {
 	
-	private String role;
+	private Role role;
 }

@@ -1,8 +1,5 @@
 package com.vti.form.film;
 
-import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.vti.entity.Film;
 
 import lombok.Data;
@@ -23,9 +20,6 @@ public class CreatingFilmForm {
 	private String duration;
 	
 	private String description;
-	
-//	@JsonFormat(pattern = "dd-MM-yyyy")
-//	private Date releaseDate;
 
 	private Integer ticketPrice;
 
