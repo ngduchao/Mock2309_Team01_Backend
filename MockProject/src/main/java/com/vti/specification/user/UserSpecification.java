@@ -78,7 +78,7 @@ class CustomSpecification implements Specification<User>{
 		}
 		
 		if (field.equalsIgnoreCase("role")) {
-			return criteriaBuilder.like(root.get("role"), "%" + value.toString() + "%");
+			return criteriaBuilder.equal(root.get("role"), value);
 		}
 		
 		return null;

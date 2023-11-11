@@ -77,6 +77,12 @@ public class FilmService implements IFilmService {
 		
 		repository.save(entity);
 	}
+//
+//	@Override
+//	@Transactional
+//	public void deleteFilms(List<Integer> ids) {
+//		repository.deleteByIdIn(ids);
+//	}
 	
 }
 
