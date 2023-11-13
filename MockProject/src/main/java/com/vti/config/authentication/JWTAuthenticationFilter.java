@@ -39,7 +39,6 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
                 new UsernamePasswordAuthenticationToken(
                 		request.getParameter("username"),
                 		request.getParameter("password"),
-//                        new ArrayList<>()
                 		Collections.emptyList()
                 )
         );
@@ -56,9 +55,5 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
     	User user = userService.findUserByUsername(authResult.getName());
         JWTTokenService.addJWTTokenAndUserInfoToBody(response, user);
         
-//        String token = JWT.create()
-//                .withSubject(((User) authResult.getPrincipal()).getUsername())
-//                .withExpiresAt(new Date(System.currentTimeMillis() + 864000000))
-//                .sign(Algorithm.HMAC512("123456"));
     }
 }
