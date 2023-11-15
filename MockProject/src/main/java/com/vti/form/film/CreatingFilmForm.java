@@ -1,5 +1,6 @@
 package com.vti.form.film;
 
+import com.vti.dto.UserDTO.FilmInfoDTO;
 import com.vti.entity.Film;
 
 import lombok.Data;
@@ -28,6 +29,4 @@ public class CreatingFilmForm {
 	public Film toEntity() {
 		return new Film(name, directors, actors, genre, duration, description, ticketPrice, poster);
 	}
-	
-	
 }
