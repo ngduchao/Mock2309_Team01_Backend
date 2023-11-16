@@ -103,7 +103,8 @@ public class UserController {
 	public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO dto) {
 		// create User
 		service.createUser(dto.toEntity());
-
+		System.out.println(dto);
+	
 		return new ResponseEntity<>("We have sent an email. Please check email to active account!", HttpStatus.OK);
 	}
 	
