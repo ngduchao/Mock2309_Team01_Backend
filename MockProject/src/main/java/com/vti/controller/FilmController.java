@@ -13,6 +13,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,6 +35,7 @@ import com.vti.service.IFilmService;
 import com.vti.service.IUserService;
 import com.vti.validation.film.FilmIDExists;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "api/v1/films")
 public class FilmController {

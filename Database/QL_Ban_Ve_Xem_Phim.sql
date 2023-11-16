@@ -71,6 +71,13 @@ CREATE TABLE IF NOT EXISTS `Reset_Password_Token` (
 	`expiryDate` 	DATETIME NOT NULL
 );
 
+CREATE TABLE `Token`(
+	id				BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    expiration		DATETIME,
+    token			VARCHAR(1000),
+    user_agent		VARCHAR(255)
+);
+
 -- password: 123456
 INSERT INTO `User` (`username`, `email`, `password`, `firstname`, `lastname`, `role`, `status`)
 VALUES				('duchao',    	'duchao0202@gmail.com', 	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi', 'Nguyen', 	'Hao', 		'Admin',  1),
@@ -85,9 +92,9 @@ VALUES				('duchao',    	'duchao0202@gmail.com', 	'$2a$10$W2neF9.6Agi6kAKVq8q3fe
                      
 INSERT INTO `Film` (`name`, `directors`, `actors`, `genre`, `duration`, `description`, `release_date`, `ticket_price`, `poster`, `creator_id`)
 VALUES				('Năm đêm kinh hoàng', 'Emma Tammi','Matthew Lillard, Josh Hutcherson, Mary Stuart Masterson', 'Kinh Dị', '110 phút', 'Nhân viên bảo vệ Mike bắt đầu làm việc tại Freddy Fazbear pizza...', '2023/10/27', 70000,'https://files.betacorp.vn/files/media%2fimages%2f2023%2f10%2f03%2f700x1000-5demkinhhoang-115804-031023-17.png' , 1),
-					('Kị sĩ bóng đêm', 'Christopher Nolan', 'Christian Bale, Michael Caine, Heath Ledger, Aaron Eckhart', 'Hành động', '152 phút', 'Kị sĩ bóng đêm mở đầu bằng cuộc oanh tạc...', '2023/10/18', 70000,'...', 1),
-                    ('Wolfoo và hòn đảo kỳ bí', 'Phan Thị Thơ', 'Sony Minh Hiếu, Đạt Phi, Như Ý', 'Hài, Hoạt Hình', '100 phút', 'Câu chuyện xoay quanh nhân vật chính là chú sói nhỏ ...', '2023/10/13', 70000,'...', 2),
-                    ('Vầng trăng máu', 'Martin Scorsese', 'Leonardo DiCaprio, Robert De Niro, Lily Gladstone', 'Bí ẩn, Hồi hộp', '206 phút', 'Vào những năm 1920, các thành viên của khu tự trị Osage...', '2023/10/20', 70000,'...', 3);
+					('Kị sĩ bóng đêm', 'Christopher Nolan', 'Christian Bale, Michael Caine, Heath Ledger, Aaron Eckhart', 'Hành động', '152 phút', 'Kị sĩ bóng đêm mở đầu bằng cuộc oanh tạc...', '2023/10/18', 70000,'https://drive.google.com/uc?export=view&id=1YJN9IhQUFz1putzE5frxvGRaR6uci6t4', 1),
+                    ('Wolfoo và hòn đảo kỳ bí', 'Phan Thị Thơ', 'Sony Minh Hiếu, Đạt Phi, Như Ý', 'Hài, Hoạt Hình', '100 phút', 'Câu chuyện xoay quanh nhân vật chính là chú sói nhỏ ...', '2023/10/13', 70000,'https://drive.google.com/uc?export=view&id=1WOnjDPSBSLTVvJ161UF5E7wUDNnKVt6C', 2),
+                    ('Vầng trăng máu', 'Martin Scorsese', 'Leonardo DiCaprio, Robert De Niro, Lily Gladstone', 'Bí ẩn, Hồi hộp', '206 phút', 'Vào những năm 1920, các thành viên của khu tự trị Osage...', '2023/10/20', 70000,'https://drive.google.com/uc?export=view&id=1YubEcYMc8_Wh9oK4VszqinQX5kOMOE8O', 3);
                 
 INSERT INTO `Film_Schedule` (`film_id`, `seat_number`, `time_slot`)
 VALUES							(1, 100, '2023/10/25'),
