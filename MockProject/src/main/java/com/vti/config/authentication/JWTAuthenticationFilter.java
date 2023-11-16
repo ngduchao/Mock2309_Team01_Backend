@@ -39,7 +39,7 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
                 new UsernamePasswordAuthenticationToken(
                 		request.getParameter("username"),
                 		request.getParameter("password"),
-                        Collections.emptyList()
+                		Collections.emptyList()
                 )
         );
     }
@@ -50,8 +50,10 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
     		HttpServletResponse response, 
     		FilterChain chain, 
     		Authentication authResult) throws IOException, ServletException {
+
     	// infor user
     	User user = userService.findUserByUsername(authResult.getName());
         JWTTokenService.addJWTTokenAndUserInfoToBody(response, user);
+        
     }
 }

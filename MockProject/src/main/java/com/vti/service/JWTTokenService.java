@@ -29,6 +29,7 @@ public class JWTTokenService {
     public static void addJWTTokenAndUserInfoToBody(HttpServletResponse response, User user) throws IOException {
         String JWT = Jwts.builder()
                 .setSubject(user.getUsername())
+//                .setSubject(user.getUsername() + " " + user.getRole().toString())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET)
                 .compact();
@@ -61,6 +62,8 @@ public class JWTTokenService {
         if (token == null) {
         	return null;
         }
+        
+        
         
         // parse the token
         String username = Jwts.parser()

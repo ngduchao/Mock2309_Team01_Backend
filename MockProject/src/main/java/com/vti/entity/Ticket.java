@@ -18,8 +18,13 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "Ticket")
+@Data
+@NoArgsConstructor
 public class Ticket implements Serializable{
 
 	private static final long serialVersionUID = 1L;

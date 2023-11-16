@@ -45,6 +45,4 @@ public interface IUserService extends UserDetailsService{
 	public void resetPassword(String token, String newPassword);
 	
 	public void sendResetPasswordViaEmail(String email);
-	
-	
 }
