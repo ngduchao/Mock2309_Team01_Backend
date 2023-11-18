@@ -72,7 +72,7 @@ public class FilmController {
 	}
 
 	
-	@DeleteMapping(value = "{id}")
+	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<?> deleteFilm(@FilmIDExists @PathVariable(name = "id") Integer id){
 		
 		service.deleteFilm(id);
@@ -80,7 +80,7 @@ public class FilmController {
 		return new ResponseEntity<>("Delete Successfully!", HttpStatus.OK);
 	}
 	
-	@PutMapping(value = "{id}")
+	@PutMapping(value = "/{id}")
 	public ResponseEntity<?> updateFilm(@PathVariable(name = "id") Integer id, @RequestBody UpdatingFilmForm form){
 		
 		service.updateFilm(id, form);
