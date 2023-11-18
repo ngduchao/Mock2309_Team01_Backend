@@ -1,6 +1,7 @@
 package com.vti.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -12,7 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -37,6 +41,11 @@ public class Ticket implements Serializable{
 	
 	@Column(name = "total", nullable = false, updatable = false)
 	private Integer total;
+	
+	@Column(name = "booking_date", nullable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp
+	private Date bookingDate;
 	
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "status", nullable = false)
