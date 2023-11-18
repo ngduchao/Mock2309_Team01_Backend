@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 import com.vti.form.filmSchedule.CreatingFilmSchedule;
 import com.vti.form.filmSchedule.FilmScheduleFilterForm;
@@ -26,8 +27,6 @@ public class FilmScheduleService implements IFilmScheduleService {
 		Specification<FilmSchedule> where = FilmScheduleSpecification.buildWhere(filter);
 		
 		return repository.findAll(where, pageable);
-		
-		
 	}
 
 	@Override
@@ -57,4 +56,13 @@ public class FilmScheduleService implements IFilmScheduleService {
 	public void deleteFilmSchedule(Integer id) {
 		repository.deleteById(id);
 	}
+
+//	@Override
+//	public void CreateFilmScheduleForFilm(Film film, CreatingFilmSchedule form) {
+//		FilmSchedule filmSchedule = form.toEntity();
+//		
+//		filmSchedule.setFilm(film);
+//		
+//		repository.save(filmSchedule);
+//	}
 }

@@ -1,8 +1,6 @@
 package com.vti.form.film;
 
-import com.vti.dto.UserDTO.FilmInfoDTO;
 import com.vti.entity.Film;
-import com.vti.entity.FilmSchedule;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,8 +24,6 @@ public class CreatingFilmForm {
 	private Integer ticketPrice;
 
 	private String poster;
-	
-	private FilmScheduleInfoDTO filmSchedule;
 	
 	public Film toEntity() {
 		return new Film(name, directors, actors, genre, duration, description, ticketPrice, poster);

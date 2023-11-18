@@ -85,9 +85,15 @@ public class UserController {
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "{id}")
-	public ResponseEntity<?> deleteUser(@PathVariable(name = "id") Integer id){
-		service.deleteUser(id);
+//	@DeleteMapping(value = "{id}")
+//	public ResponseEntity<?> deleteUser(@PathVariable(name = "id") Integer id){
+//		service.deleteUser(id);
+//		return new ResponseEntity<>("Delete Successfully!", HttpStatus.OK);
+//	}
+	
+	@DeleteMapping(value = "/{ids}")
+	public ResponseEntity<?> deleteUsers(@PathVariable(name = "ids") List<Integer> ids){
+		service.deleteUsers(ids);
 		return new ResponseEntity<>("Delete Successfully!", HttpStatus.OK);
 	}
 	

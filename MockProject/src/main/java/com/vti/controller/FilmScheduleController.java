@@ -23,11 +23,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vti.dto.FilmScheduleDTO;
+import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 import com.vti.form.filmSchedule.CreatingFilmSchedule;
 import com.vti.form.filmSchedule.FilmScheduleFilterForm;
 import com.vti.form.filmSchedule.UpdatingFilmScheduleForm;
 import com.vti.service.IFilmScheduleService;
+import com.vti.service.IFilmService;
 import com.vti.validation.filmSchedule.FilmScheduleIDExists;
 
 @CrossOrigin("*")
@@ -38,6 +40,9 @@ public class FilmScheduleController {
     private IFilmScheduleService service;
 	
 	@Autowired
+	private IFilmService filmService;
+	
+	@Autowired
 	private ModelMapper modelMapper;
 	
 	@PostMapping()
@@ -46,11 +51,15 @@ public class FilmScheduleController {
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
 	
-//	@PotMapping(value = "/{id}")
-//	public ResponseEntity<?> CreateFilmSchedule(@PathVariable(name = "id") Integer filmId, CreatingFilmSchedule form) {
-//    	repository.createFilmSchedule(1, form);
+//	@PostMapping(value = "/{filmId}")
+//	public ResponseEntity<?> CreateFilmScheduleForFilm(@PathVariable(name = "filmId") Integer filmId, CreatingFilmSchedule form, FilmSchedule filmSchedule) {
+//		filmId = filmSchedule.getFilm().getFilmId();
 //		
-//		return new ResponseEntity<>(dto, HttpStatus.OK);
+//		Film film = filmService.getFilmByID(filmId);
+//		
+//    	service.CreateFilmScheduleForFilm(film, form);
+//		
+//    	return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 //    }
 	
 	@GetMapping()

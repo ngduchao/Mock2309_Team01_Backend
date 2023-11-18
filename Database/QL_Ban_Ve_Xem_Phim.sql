@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `Ticket`(
     `schedule_id`		INT,
     `quantity`			INT NOT NULL,
     `total`				INT NOT NULL, -- not update
+    `booking_date`		DATETIME DEFAULT NOW(),
     `status`			BOOLEAN DEFAULT 0,
     PRIMARY KEY (`creator_id`, `schedule_id`),
     FOREIGN KEY (`creator_id`) REFERENCES `User`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -103,9 +104,9 @@ VALUES							(1, 100, '2023/10/25'),
                                 (3, 100, '2023/10/28'),
                                 (4, 100, '2023/10/29');
                                 
-INSERT INTO `Ticket` (`creator_id`, `schedule_id`, `quantity`, `total`, `status`)
-VALUES				(8, 1, 2, 140000, 1),
-					(8, 2, 1, 70000, 1),
-                    (8, 3, 2, 140000, 1),
-                    (9, 4, 2, 140000, 1),
-                    (9, 5, 1, 70000, 1);
+INSERT INTO `Ticket` (`creator_id`, `schedule_id`, `quantity`, `total`, `booking_date`, `status`)
+VALUES				(8, 1, 2, 140000, '2023/10/30', 1),
+					(8, 2, 1, 70000,  '2023/11/01', 1),
+                    (8, 3, 2, 140000, '2023/11/03', 1),
+                    (9, 4, 2, 140000, '2023/11/05', 1),
+                    (9, 5, 1, 70000,  '2023/11/10', 1);
