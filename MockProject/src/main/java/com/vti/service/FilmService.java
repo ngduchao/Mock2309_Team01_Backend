@@ -2,7 +2,6 @@ package com.vti.service;
 
 import javax.transaction.Transactional;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,9 +21,6 @@ public class FilmService implements IFilmService {
 	
 	@Autowired 
 	private IFilmRepository repository;
-	
-	@Autowired
-	private ModelMapper modelMapper;
 
 	@Override
 	public Page<Film> getAllFilms(Pageable pageable, String search, FilmFilterForm filter) {
