@@ -39,7 +39,7 @@ public class Ticket implements Serializable{
 	@Column(name = "quantity", nullable = false)
 	private Integer quantity;
 	
-	@Column(name = "total", nullable = false, updatable = false)
+	@Column(name = "total", nullable = false)
 	private Integer total;
 	
 	@Column(name = "booking_date", nullable = false)
@@ -49,7 +49,7 @@ public class Ticket implements Serializable{
 	
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "status", nullable = false)
-	private PayStatus status = PayStatus.NOT_PAY;
+	private PayStatus status = PayStatus.PAY;
 	
 	@JsonBackReference
 	@ManyToOne
@@ -64,7 +64,22 @@ public class Ticket implements Serializable{
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "schedule_id")
 	private FilmSchedule filmSchedule;
+
 	
+	public Ticket(Integer quantity) {
+		super();
+		this.quantity = quantity;
+	}
+
+	public Ticket(Integer quantity, Integer total, Integer creatorId, Integer scheduleId) {
+		super();
+		this.quantity = quantity;
+		this.total = total;
+		TicketKey ticketKey = new TicketKey();
+		ticketKey.setCreatorId(creatorId);
+		ticketKey.setScheduleId(scheduleId);
+	}
+
 	@Embeddable
 	public static class TicketKey implements Serializable {
 
