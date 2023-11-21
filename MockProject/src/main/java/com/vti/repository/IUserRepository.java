@@ -1,15 +1,15 @@
 package com.vti.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
 import com.vti.entity.User;
 import com.vti.entity.UserStatus;
 
-@Repository
 public interface IUserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User>{
 	
 	public boolean existsByUsername(String username);
@@ -24,4 +24,6 @@ public interface IUserRepository extends JpaRepository<User, Integer>, JpaSpecif
 			+ "	FROM 	User 		"
 			+ " WHERE 	email = :email")
 	public UserStatus findStatusByEmail(@Param("email") String email);
+	
+	public void deleteByIdIn(List<Integer> ids);
 }

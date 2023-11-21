@@ -28,6 +28,4 @@ public class CreatingFilmForm {
 	public Film toEntity() {
 		return new Film(name, directors, actors, genre, duration, description, ticketPrice, poster);
 	}
-	
-	
 }

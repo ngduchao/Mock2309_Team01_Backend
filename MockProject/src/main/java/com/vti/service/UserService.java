@@ -1,6 +1,5 @@
 package com.vti.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -9,16 +8,17 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.vti.entity.RegistrationUserToken;
 import com.vti.entity.ResetPasswordToken;
+import com.vti.entity.Ticket;
 import com.vti.entity.User;
 import com.vti.entity.UserStatus;
 import com.vti.event.OnResetPasswordViaEmailEvent;
@@ -71,10 +71,10 @@ public class UserService implements IUserService,UserDetailsService{
 		return repository.existsByUsername(username);
 	}
 
-	@Override
-	public void deleteUser(Integer id) {
-		repository.deleteById(id);
-	}
+//	@Override
+//	public void deleteUser(Integer id) {
+//		repository.deleteById(id);
+//	}
 
 	@Override
 	public boolean existsUserByEmail(String email) {
@@ -103,18 +103,18 @@ public class UserService implements IUserService,UserDetailsService{
 		return repository.findByEmail(email);
 	}
 	
-//	@Override
-//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//		// Check user exists by username
-//		User user = repository.findByUsername(username);
-//
-//		if (user == null) {
-//			throw new UsernameNotFoundException(username);
-//		}
-//
-//		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-//				AuthorityUtils.createAuthorityList(user.getRole().name()));
-//	}
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// Check user exists by username
+		User user = repository.findByUsername(username);
+
+		if (user == null) {
+			throw new UsernameNotFoundException(username);
+		}
+
+		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
+				AuthorityUtils.createAuthorityList(user.getRole().name()));
+	}
 	
 
 
@@ -211,17 +211,22 @@ public class UserService implements IUserService,UserDetailsService{
 		resetPasswordTokenRepository.deleteById(resetPasswordToken.getId());
 	}
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-	
-	User user = repository.findByUsername(username);
-	if (user!=null) {
-		List<GrantedAuthority> authorities = new ArrayList<>();
-		authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
-			return  new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),authorities);
-		}else {
-			throw new UsernameNotFoundException(username);
-		}
+	@Transactional
+	public void deleteUsers(List<Integer> ids) {
+		repository.deleteByIdIn(ids);
 	}
+
+//	@Override
+//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//	
+//	User user = repository.findByUsername(username);
+//	if (user!=null) {
+//		List<GrantedAuthority> authorities = new ArrayList<>();
+//		authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
+//			return  new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),authorities);
+//		}else {
+//			throw new UsernameNotFoundException(username);
+//		}
+//	}
 	
 }

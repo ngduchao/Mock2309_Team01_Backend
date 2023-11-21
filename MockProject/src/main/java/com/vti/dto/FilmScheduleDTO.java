@@ -3,6 +3,7 @@ package com.vti.dto;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.vti.entity.Ticket;
 
 import lombok.Data;
@@ -17,6 +18,7 @@ public class FilmScheduleDTO {
 	
 	private Integer seatNumber;
 	
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date timeSlot;
 	
 	private FilmDTO film;

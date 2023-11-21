@@ -70,7 +70,7 @@ public class User implements Serializable{
 	private List<Film> films;
 	
 	@JsonBackReference
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user1")
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Ticket> tickets;
 
