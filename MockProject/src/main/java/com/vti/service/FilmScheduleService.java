@@ -63,6 +63,16 @@ public class FilmScheduleService implements IFilmScheduleService {
 		repository.deleteById(id);
 	}
 
+	@Override
+	public List<FilmSchedule> getFilmScheduleByFilm(Integer filmId) {
+
+		Film film = filmRepository.getById(filmId);
+		
+		List<FilmSchedule> filmSchedules = film.getFilmSchedules();
+		
+		return filmSchedules;
+	}
+
 //	@Override
 //	public void CreateFilmScheduleForFilm(Film film, CreatingFilmSchedule form) {
 //		FilmSchedule filmSchedule = form.toEntity();

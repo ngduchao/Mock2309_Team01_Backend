@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import com.vti.dto.TicketInfoDTO;
 import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 import com.vti.entity.Ticket;
@@ -92,6 +93,14 @@ public class TicketService implements ITicketService{
 		ticket.setTotal(total);
 				
         repository.save(ticket);
+	}
+
+	@Override
+	public List<Ticket> getTicketByUser(User user) {
+		
+		List<Ticket> tickets = user.getTickets();
+		
+		return tickets;
 	}
 
 }
