@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vti.dto.FilmScheduleByFilmDTO;
 import com.vti.dto.FilmScheduleDTO;
 import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
@@ -83,6 +84,17 @@ public class FilmScheduleController {
 		FilmScheduleDTO dto = modelMapper.map(entity, FilmScheduleDTO.class);
 		
 		return new ResponseEntity<>(dto, HttpStatus.OK);
+    }
+    
+    @GetMapping(value = "/list/{filmId}")
+    public ResponseEntity<?> getFilmScheduleByFilm(@PathVariable(name = "filmId") Integer filmId){
+    	
+    	List<FilmSchedule> filmSchedules = service.getFilmScheduleByFilm(filmId);
+    	
+		List<FilmScheduleByFilmDTO> dtos = modelMapper.map(filmSchedules, new TypeToken<List<FilmScheduleByFilmDTO>>() {}.getType());
+    	
+    	return new ResponseEntity<>(dtos, HttpStatus.OK);
+    	
     }
     
     @PutMapping(value = "/{id}")

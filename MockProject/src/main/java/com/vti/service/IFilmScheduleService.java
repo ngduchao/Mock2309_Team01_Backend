@@ -26,5 +26,7 @@ public interface IFilmScheduleService {
 	
 	public void deleteFilmSchedule(Integer id);
 	
+	public List<FilmSchedule> getFilmScheduleByFilm(Integer filmId);
+	
 //	public void CreateFilmScheduleForFilm (Film film ,CreatingFilmSchedule form);
 }

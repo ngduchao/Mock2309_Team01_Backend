@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vti.dto.TicketDTO;
+import com.vti.dto.TicketInfoDTO;
 import com.vti.entity.Ticket;
 import com.vti.entity.User;
 import com.vti.form.ticket.CreatingTicketForm;
@@ -58,10 +59,20 @@ public class TicketController {
 		return new ResponseEntity<>(dtoPages, HttpStatus.OK);
 	}
 	
-	@PutMapping(value = "/{id}")
+	@GetMapping(value = "/list")
+	public ResponseEntity<?> getTicketByUser(Authentication authentication){
+		
+		User user = userService.findUserByUsername(authentication.getName());
+		
+		List<Ticket> tickets = service.getTicketByUser(user);
+		
+		return new ResponseEntity<>(tickets, HttpStatus.OK);
+	}
+	
+	@PutMapping(value = "/{filmScheduleId}")
 	public ResponseEntity<?> updateTicket(
 			Authentication authentication, 
-			@PathVariable(name = "id") Integer filmScheduleId, 
+			@PathVariable(name = "filmScheduleId") Integer filmScheduleId, 
 			@RequestBody UpdatingTicketForm form){
 		
 		User user = userService.findUserByUsername(authentication.getName());
@@ -71,10 +82,10 @@ public class TicketController {
 		return new ResponseEntity<>("Update Successfully!", HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/{id}")
+	@DeleteMapping(value = "/{filmScheduleId}")
 	public ResponseEntity<?> deleteUser(
 			Authentication authentication, 
-			@PathVariable(name = "id") Integer filmScheduleId){
+			@PathVariable(name = "filmScheduleId") Integer filmScheduleId){
 		
 		User user = userService.findUserByUsername(authentication.getName());
 		
