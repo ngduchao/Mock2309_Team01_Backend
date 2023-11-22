@@ -21,6 +21,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -45,6 +46,7 @@ public class Ticket implements Serializable{
 	@Column(name = "booking_date", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date bookingDate;
 	
 	@Enumerated(EnumType.ORDINAL)

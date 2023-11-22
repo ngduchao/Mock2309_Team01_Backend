@@ -98,6 +98,7 @@ public class FilmController {
 		User userInfo = userService.findUserByUsername(username);
 		
 		service.createFilm(userInfo, form);
+		
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
 }

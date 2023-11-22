@@ -94,23 +94,6 @@ public class TicketController {
 		return new ResponseEntity<>("Delete Successfully!", HttpStatus.OK);
 	}
 	
-//	@PostMapping(value = "/{filmScheduleId}")
-//	public ResponseEntity<?> createTicket(
-//			Authentication authentication,
-//			@RequestBody CreatingTicketForm form,
-//			@PathVariable(name = "filmScheduleId") Integer filmScheduleId){
-//		
-//		User user = userService.findUserByUsername(authentication.getName());
-//		
-//		form.setCreatorId(user.getId());
-//		
-//		form.setFilmScheduleId(filmScheduleId);
-//		
-//		service.createTicket(user, form);
-//		
-//		return new ResponseEntity<>("Create successfully!", HttpStatus.OK);
-//	}
-	
 	@PostMapping()
     public ResponseEntity<?> createTicket(Authentication authentication, @RequestBody CreatingTicketForm form) {
 		

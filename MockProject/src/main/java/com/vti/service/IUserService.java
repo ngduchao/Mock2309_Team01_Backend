@@ -10,11 +10,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.vti.entity.User;
 import com.vti.filter.UserFilterForm;
+import com.vti.form.user.CreatingUserByAdminForm;
 import com.vti.form.user.UpdatingUserForm;
 
 public interface IUserService extends UserDetailsService{
 	
-	public void createUser(User user);
+	public void Register(User user);
+	
+	public void createUserByAdmin(CreatingUserByAdminForm form);
 
 	public Page<User> getAllUsers(Pageable pageable, String search, UserFilterForm filter);
 	
@@ -24,7 +27,7 @@ public interface IUserService extends UserDetailsService{
 	
 	public boolean isUserExistsByID(Integer id);
 	
-	public boolean isUserByUsername(String username);
+	public boolean isUserExistsByUsername(String username);
 	
 	public boolean existsUserByEmail(String email);
 	

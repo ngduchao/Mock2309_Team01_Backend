@@ -16,7 +16,7 @@ public class CreatingFilmSchedule {
 	
 	private Integer seatNumber;
 	
-	@JsonFormat(pattern = "dd-MM-yyyy")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date timeSlot;
 	
 	public FilmSchedule toEntity() {

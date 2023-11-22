@@ -26,7 +26,7 @@ public class FilmDTO {
 	
 	private String description;
 	
-	@JsonFormat(pattern = "dd-MM-yyyy")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date releaseDate;
 	
 	private Integer ticketPrice;
@@ -52,7 +52,7 @@ public class FilmDTO {
 		
 		private Integer scheduleId;
 		
-		@JsonFormat(pattern = "dd-MM-yyyy")
+		@JsonFormat(pattern = "yyyy-MM-dd")
 		private Date timeSlot;
 	}
 }

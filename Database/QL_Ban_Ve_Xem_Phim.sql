@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `Ticket`(
 	`creator_id`		INT,
     `schedule_id`		INT,
     `quantity`			INT NOT NULL,
-    `total`				INT NOT NULL, -- not update
+    `total`				INT NOT NULL, 
     `booking_date`		DATETIME DEFAULT NOW(),
     `status`			BOOLEAN DEFAULT 0,
     PRIMARY KEY (`creator_id`, `schedule_id`),
@@ -100,6 +100,9 @@ VALUES				('Năm đêm kinh hoàng', 'Emma Tammi','Matthew Lillard, Josh Hutcher
 INSERT INTO `Film_Schedule` (`film_id`, `seat_number`, `time_slot`)
 VALUES							(1, 100, '2023/10/25'),
 								(2, 50, '2023/10/26'),
+								(2, 50, '2023/10/27'),
+								(2, 70, '2023/10/28'),
+								(2, 100, '2023/10/29'),
                                 (3, 70, '2023/10/27'),
                                 (3, 100, '2023/10/28'),
                                 (4, 100, '2023/10/29');
@@ -110,3 +113,4 @@ VALUES				(8, 1, 2, 140000, '2023/10/30', 1),
                     (8, 3, 2, 140000, '2023/11/03', 1),
                     (9, 4, 2, 140000, '2023/11/05', 1),
                     (9, 5, 1, 70000,  '2023/11/10', 1);
+				
