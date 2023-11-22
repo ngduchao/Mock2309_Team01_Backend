@@ -18,6 +18,6 @@ public class TicketDTO {
 	
 	private Integer total;
 	
-	@JsonFormat(pattern = "dd-MM-yyyy")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date bookingDate;
 }

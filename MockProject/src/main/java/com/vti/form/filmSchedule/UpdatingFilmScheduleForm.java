@@ -13,7 +13,7 @@ public class UpdatingFilmScheduleForm {
 	
 	private Integer seatNumber;
 
-	@JsonFormat(pattern = "dd-MM-yyyy")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date timeSlot;
 	
 }

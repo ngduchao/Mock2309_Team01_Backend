@@ -3,6 +3,7 @@ package com.vti.service;
 import java.util.List;
 import java.util.UUID;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
@@ -18,11 +19,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.vti.entity.RegistrationUserToken;
 import com.vti.entity.ResetPasswordToken;
+import com.vti.entity.Role;
 import com.vti.entity.User;
 import com.vti.entity.UserStatus;
 import com.vti.event.OnResetPasswordViaEmailEvent;
 import com.vti.event.OnSendRegistrationUserConfirmViaEmailEvent;
 import com.vti.filter.UserFilterForm;
+import com.vti.form.user.CreatingUserByAdminForm;
 import com.vti.form.user.UpdatingUserForm;
 import com.vti.repository.IUserRepository;
 import com.vti.repository.RegistrationUserTokenRepository;
@@ -34,6 +37,9 @@ public class UserService implements IUserService,UserDetailsService{
 	
 	@Autowired 
 	private IUserRepository repository;
+	
+	@Autowired
+	private ModelMapper modelMapper;
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -66,7 +72,7 @@ public class UserService implements IUserService,UserDetailsService{
 	}
 
 	@Override
-	public boolean isUserByUsername(String username) {
+	public boolean isUserExistsByUsername(String username) {
 		return repository.existsByUsername(username);
 	}
 
@@ -84,6 +90,16 @@ public class UserService implements IUserService,UserDetailsService{
 	public void updateUser(Integer id, UpdatingUserForm form) {
 		
 		User entity = repository.findById(id).get();
+		
+		if(form.getEmail() == null) {
+			form.setEmail(entity.getEmail());
+		}
+		if(form.getFirstName() == null) {
+			form.setFirstName(entity.getFirstName());
+		}
+		if(form.getLastName() == null) {
+			form.setLastName(entity.getLastName());
+		}
 		
 		entity.setEmail(form.getEmail());
 		entity.setFirstName(form.getFirstName());
@@ -118,9 +134,11 @@ public class UserService implements IUserService,UserDetailsService{
 
 
 	@Override
-	public void createUser(User user) {
+	public void Register(User user) {
 		// encode password
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		
+		user.setRole(Role.User);
 
 		// create user
 		repository.save(user);
@@ -130,6 +148,20 @@ public class UserService implements IUserService,UserDetailsService{
 
 		// send email to confirm
 		sendConfirmUserRegistrationViaEmail(user.getEmail());
+	}
+	
+	@Override
+	public void createUserByAdmin(CreatingUserByAdminForm form) {
+		
+		User user = modelMapper.map(form, User.class);
+		
+		// encode password
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		
+		user.setStatus(UserStatus.ACTIVE);
+		
+		// create user
+		repository.save(user);
 	}
 	
 	private void createNewRegistrationUserToken(User user) {
@@ -214,6 +246,8 @@ public class UserService implements IUserService,UserDetailsService{
 	public void deleteUsers(List<Integer> ids) {
 		repository.deleteByIdIn(ids);
 	}
+
+
 
 //	@Override
 //	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
