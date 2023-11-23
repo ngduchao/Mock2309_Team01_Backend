@@ -1,4 +1,4 @@
-package com.vti.form.filmSchedule;
+package com.vti.form.ticket;
 
 import java.util.Date;
 
@@ -9,12 +9,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class FilmScheduleFilterForm {
+public class TicketFilterForm {
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date minTimeSlot;
-
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date maxTimeSlot;
+	private Date minBookingDate;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date maxBookingDate;
 }

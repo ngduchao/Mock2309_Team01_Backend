@@ -1,5 +1,7 @@
 package com.vti.service;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,21 +10,24 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.vti.entity.User;
 import com.vti.filter.UserFilterForm;
+import com.vti.form.user.CreatingUserByAdminForm;
 import com.vti.form.user.UpdatingUserForm;
 
 public interface IUserService extends UserDetailsService{
 	
-	public void createUser(User user);
+	public void Register(User user);
+	
+	public void createUserByAdmin(CreatingUserByAdminForm form);
 
 	public Page<User> getAllUsers(Pageable pageable, String search, UserFilterForm filter);
 	
 	public User getUserByID(Integer id);
 	
-	public void deleteUser(Integer id);
+//	public void deleteUser(Integer id);
 	
 	public boolean isUserExistsByID(Integer id);
 	
-	public boolean isUserByUsername(String username);
+	public boolean isUserExistsByUsername(String username);
 	
 	public boolean existsUserByEmail(String email);
 	
@@ -45,4 +50,6 @@ public interface IUserService extends UserDetailsService{
 	public void resetPassword(String token, String newPassword);
 	
 	public void sendResetPasswordViaEmail(String email);
+	
+	public void deleteUsers(List<Integer> ids);
 }

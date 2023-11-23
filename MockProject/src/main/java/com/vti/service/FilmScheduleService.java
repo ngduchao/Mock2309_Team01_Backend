@@ -1,15 +1,19 @@
 package com.vti.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 import com.vti.form.filmSchedule.CreatingFilmSchedule;
 import com.vti.form.filmSchedule.FilmScheduleFilterForm;
 import com.vti.form.filmSchedule.UpdatingFilmScheduleForm;
+import com.vti.repository.IFilmRepository;
 //import com.vti.form.filmschedule.UpdatingFilmScheduleForm;
 import com.vti.repository.IFilmScheduleRepository;
 import com.vti.specification.filmSchedule.FilmScheduleSpecification;
@@ -19,6 +23,9 @@ public class FilmScheduleService implements IFilmScheduleService {
 
 	@Autowired
 	private IFilmScheduleRepository repository;
+	
+	@Autowired
+	private IFilmRepository filmRepository;
 
 	@Override
 	public Page<FilmSchedule> getAllFilmSchedules(Pageable pageable, FilmScheduleFilterForm filter) {
@@ -26,8 +33,6 @@ public class FilmScheduleService implements IFilmScheduleService {
 		Specification<FilmSchedule> where = FilmScheduleSpecification.buildWhere(filter);
 		
 		return repository.findAll(where, pageable);
-		
-		
 	}
 
 	@Override
@@ -57,4 +62,23 @@ public class FilmScheduleService implements IFilmScheduleService {
 	public void deleteFilmSchedule(Integer id) {
 		repository.deleteById(id);
 	}
+
+	@Override
+	public List<FilmSchedule> getFilmScheduleByFilm(Integer filmId) {
+
+		Film film = filmRepository.getById(filmId);
+		
+		List<FilmSchedule> filmSchedules = film.getFilmSchedules();
+		
+		return filmSchedules;
+	}
+
+//	@Override
+//	public void CreateFilmScheduleForFilm(Film film, CreatingFilmSchedule form) {
+//		FilmSchedule filmSchedule = form.toEntity();
+//		
+//		filmSchedule.setFilm(film);
+//		
+//		repository.save(filmSchedule);
+//	}
 }

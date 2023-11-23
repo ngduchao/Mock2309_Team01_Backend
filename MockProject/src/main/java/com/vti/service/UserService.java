@@ -1,29 +1,31 @@
 package com.vti.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.vti.entity.RegistrationUserToken;
 import com.vti.entity.ResetPasswordToken;
+import com.vti.entity.Role;
 import com.vti.entity.User;
 import com.vti.entity.UserStatus;
 import com.vti.event.OnResetPasswordViaEmailEvent;
 import com.vti.event.OnSendRegistrationUserConfirmViaEmailEvent;
 import com.vti.filter.UserFilterForm;
+import com.vti.form.user.CreatingUserByAdminForm;
 import com.vti.form.user.UpdatingUserForm;
 import com.vti.repository.IUserRepository;
 import com.vti.repository.RegistrationUserTokenRepository;
@@ -35,6 +37,9 @@ public class UserService implements IUserService,UserDetailsService{
 	
 	@Autowired 
 	private IUserRepository repository;
+	
+	@Autowired
+	private ModelMapper modelMapper;
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -67,14 +72,14 @@ public class UserService implements IUserService,UserDetailsService{
 	}
 
 	@Override
-	public boolean isUserByUsername(String username) {
+	public boolean isUserExistsByUsername(String username) {
 		return repository.existsByUsername(username);
 	}
 
-	@Override
-	public void deleteUser(Integer id) {
-		repository.deleteById(id);
-	}
+//	@Override
+//	public void deleteUser(Integer id) {
+//		repository.deleteById(id);
+//	}
 
 	@Override
 	public boolean existsUserByEmail(String email) {
@@ -85,6 +90,16 @@ public class UserService implements IUserService,UserDetailsService{
 	public void updateUser(Integer id, UpdatingUserForm form) {
 		
 		User entity = repository.findById(id).get();
+		
+		if(form.getEmail() == null) {
+			form.setEmail(entity.getEmail());
+		}
+		if(form.getFirstName() == null) {
+			form.setFirstName(entity.getFirstName());
+		}
+		if(form.getLastName() == null) {
+			form.setLastName(entity.getLastName());
+		}
 		
 		entity.setEmail(form.getEmail());
 		entity.setFirstName(form.getFirstName());
@@ -103,25 +118,27 @@ public class UserService implements IUserService,UserDetailsService{
 		return repository.findByEmail(email);
 	}
 	
-//	@Override
-//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//		// Check user exists by username
-//		User user = repository.findByUsername(username);
-//
-//		if (user == null) {
-//			throw new UsernameNotFoundException(username);
-//		}
-//
-//		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-//				AuthorityUtils.createAuthorityList(user.getRole().name()));
-//	}
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// Check user exists by username
+		User user = repository.findByUsername(username);
+
+		if (user == null) {
+			throw new UsernameNotFoundException(username);
+		}
+
+		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
+				AuthorityUtils.createAuthorityList(user.getRole().name()));
+	}
 	
 
 
 	@Override
-	public void createUser(User user) {
+	public void Register(User user) {
 		// encode password
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		
+		user.setRole(Role.User);
 
 		// create user
 		repository.save(user);
@@ -131,6 +148,20 @@ public class UserService implements IUserService,UserDetailsService{
 
 		// send email to confirm
 		//sendConfirmUserRegistrationViaEmail(user.getEmail());
+	}
+	
+	@Override
+	public void createUserByAdmin(CreatingUserByAdminForm form) {
+		
+		User user = modelMapper.map(form, User.class);
+		
+		// encode password
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		
+		user.setStatus(UserStatus.ACTIVE);
+		
+		// create user
+		repository.save(user);
 	}
 	
 	private void createNewRegistrationUserToken(User user) {
@@ -211,17 +242,24 @@ public class UserService implements IUserService,UserDetailsService{
 		resetPasswordTokenRepository.deleteById(resetPasswordToken.getId());
 	}
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-	
-	User user = repository.findByUsername(username);
-	if (user!=null) {
-		List<GrantedAuthority> authorities = new ArrayList<>();
-		authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
-			return  new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),authorities);
-		}else {
-			throw new UsernameNotFoundException(username);
-		}
+	@Transactional
+	public void deleteUsers(List<Integer> ids) {
+		repository.deleteByIdIn(ids);
 	}
+
+
+
+//	@Override
+//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//	
+//	User user = repository.findByUsername(username);
+//	if (user!=null) {
+//		List<GrantedAuthority> authorities = new ArrayList<>();
+//		authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
+//			return  new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),authorities);
+//		}else {
+//			throw new UsernameNotFoundException(username);
+//		}
+//	}
 	
 }

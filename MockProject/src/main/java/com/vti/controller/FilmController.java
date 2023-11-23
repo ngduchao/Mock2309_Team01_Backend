@@ -35,6 +35,7 @@ import com.vti.service.IFilmService;
 import com.vti.service.IUserService;
 import com.vti.validation.film.FilmIDExists;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "api/v1/films")
 @CrossOrigin("*")
@@ -98,6 +99,7 @@ public class FilmController {
 		User userInfo = userService.findUserByUsername(username);
 		
 		service.createFilm(userInfo, form);
+		
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
 }

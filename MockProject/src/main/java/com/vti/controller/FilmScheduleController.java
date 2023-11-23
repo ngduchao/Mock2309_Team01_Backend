@@ -12,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,18 +20,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vti.dto.FilmScheduleByFilmDTO;
 import com.vti.dto.FilmScheduleDTO;
+import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 import com.vti.form.filmSchedule.CreatingFilmSchedule;
 import com.vti.form.filmSchedule.FilmScheduleFilterForm;
 import com.vti.form.filmSchedule.UpdatingFilmScheduleForm;
-//import com.vti.form.filmschedule.UpdatingFilmScheduleForm;
 import com.vti.service.IFilmScheduleService;
+import com.vti.service.IFilmService;
 import com.vti.validation.filmSchedule.FilmScheduleIDExists;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/api/v1/film-schedules")
 public class FilmScheduleController {
@@ -45,6 +48,17 @@ public class FilmScheduleController {
 		service.createFilmSchedule(form);
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
+	
+//	@PostMapping(value = "/{filmId}")
+//	public ResponseEntity<?> CreateFilmScheduleForFilm(@PathVariable(name = "filmId") Integer filmId, CreatingFilmSchedule form, FilmSchedule filmSchedule) {
+//		filmId = filmSchedule.getFilm().getFilmId();
+//		
+//		Film film = filmService.getFilmByID(filmId);
+//		
+//    	service.CreateFilmScheduleForFilm(film, form);
+//		
+//    	return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
+//    }
 	
 	@GetMapping()
 	public ResponseEntity<?> getAllFilmSchedules(
@@ -69,6 +83,17 @@ public class FilmScheduleController {
 		return new ResponseEntity<>(dto, HttpStatus.OK);
     }
     
+    @GetMapping(value = "/list/{filmId}")
+    public ResponseEntity<?> getFilmScheduleByFilm(@PathVariable(name = "filmId") Integer filmId){
+    	
+    	List<FilmSchedule> filmSchedules = service.getFilmScheduleByFilm(filmId);
+    	
+		List<FilmScheduleByFilmDTO> dtos = modelMapper.map(filmSchedules, new TypeToken<List<FilmScheduleByFilmDTO>>() {}.getType());
+    	
+    	return new ResponseEntity<>(dtos, HttpStatus.OK);
+    	
+    }
+    
     @PutMapping(value = "/{id}")
 	public ResponseEntity<?> updateFilmSchedule(@PathVariable(name = "id") Integer scheduleId, @RequestBody UpdatingFilmScheduleForm form){
 		service.updateFilmSchedule(scheduleId, form);
@@ -82,4 +107,5 @@ public class FilmScheduleController {
     	
     	return new ResponseEntity<>("Delete Successfully!", HttpStatus.OK);
     }
+
 }

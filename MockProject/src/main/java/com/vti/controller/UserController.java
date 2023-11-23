@@ -15,6 +15,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,12 +25,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vti.dto.ProfileDTO;
 import com.vti.dto.UserDTO;
 import com.vti.entity.User;
 import com.vti.filter.UserFilterForm;
+import com.vti.form.user.CreatingUserByAdminForm;
 import com.vti.form.user.CreatingUserForm;
 import com.vti.form.user.UpdatingUserForm;
 import com.vti.service.IUserService;
@@ -37,6 +40,7 @@ import com.vti.service.IUserService;
 @CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/api/v1/users")
+@Validated
 public class UserController {
 	
 	@Autowired
@@ -81,13 +85,13 @@ public class UserController {
 	
 	@GetMapping(value = "username/{username}")
 	public ResponseEntity<?> existsByUsername(@PathVariable(name = "username") String username) {
-		boolean result = service.isUserByUsername(username);
+		boolean result = service.isUserExistsByUsername(username);
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "{id}")
-	public ResponseEntity<?> deleteUser(@PathVariable(name = "id") Integer id){
-		service.deleteUser(id);
+	@DeleteMapping(value = "/{ids}")
+	public ResponseEntity<?> deleteUsers(@PathVariable(name = "ids") List<Integer> ids){
+		service.deleteUsers(ids);
 		return new ResponseEntity<>("Delete Successfully!", HttpStatus.OK);
 	}
 	
@@ -99,19 +103,27 @@ public class UserController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<?> updateUser(@PathVariable(name = "id") Integer id, @RequestBody UpdatingUserForm form){
+	public ResponseEntity<?> updateUser(@PathVariable(name = "id") Integer id, @Valid @RequestBody UpdatingUserForm form){
 		service.updateUser(id, form);
 		
 		return new ResponseEntity<>("Update Successfully!", HttpStatus.OK);
 	}
 	
+	//người dùng tự đăng ký
 	@PostMapping()
-	public ResponseEntity<?> createUser(@Valid @RequestBody CreatingUserForm dto) {
+	public ResponseEntity<?> Register(@Valid @RequestBody CreatingUserForm dto) {
 		// create User
-		service.createUser(dto.toEntity());
-		System.out.println(dto);
-	
+		service.Register(dto.toEntity());
+
 		return new ResponseEntity<>("We have sent an email. Please check email to active account!", HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/byAdmin")
+	public ResponseEntity<?> createUserByAdmin(@Valid @RequestBody CreatingUserByAdminForm form){
+		
+		service.createUserByAdmin(form);
+		
+		return new ResponseEntity<>("Create Successfully!", HttpStatus.OK);
 	}
 	
 	@GetMapping("/activeUser")

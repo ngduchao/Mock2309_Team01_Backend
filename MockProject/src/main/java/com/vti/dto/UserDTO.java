@@ -1,8 +1,10 @@
 package com.vti.dto;
 
+import java.util.Date;
 import java.util.List;
 
 import com.vti.entity.Ticket.TicketKey;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.vti.entity.Role;
 import com.vti.entity.User;
 
@@ -49,6 +51,9 @@ public class UserDTO {
 		private Integer quantity;
 		
 		private Integer total;
+		
+		@JsonFormat(pattern = "yyyy-MM-dd")
+		private Date bookingDate;
 	}
 	
 	public User toEntity() {

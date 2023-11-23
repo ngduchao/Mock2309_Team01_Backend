@@ -1,8 +1,11 @@
 package com.vti.service;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 //import com.vti.form.filmschedule.UpdatingFilmScheduleForm;
 import com.vti.form.filmSchedule.CreatingFilmSchedule;
@@ -22,4 +25,8 @@ public interface IFilmScheduleService {
 	public boolean isFilmScheduleExistsByID(Integer id);
 	
 	public void deleteFilmSchedule(Integer id);
+	
+	public List<FilmSchedule> getFilmScheduleByFilm(Integer filmId);
+	
+//	public void CreateFilmScheduleForFilm (Film film ,CreatingFilmSchedule form);
 }

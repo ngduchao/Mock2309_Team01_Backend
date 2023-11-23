@@ -1,6 +1,5 @@
 package com.vti.form.film;
 
-import com.vti.dto.UserDTO.FilmInfoDTO;
 import com.vti.entity.Film;
 
 import lombok.Data;
