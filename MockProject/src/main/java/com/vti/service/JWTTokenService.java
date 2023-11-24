@@ -63,8 +63,6 @@ public class JWTTokenService {
         	return null;
         }
         
-        
-        
         // parse the token
         String username = Jwts.parser()
                 .setSigningKey(SECRET)

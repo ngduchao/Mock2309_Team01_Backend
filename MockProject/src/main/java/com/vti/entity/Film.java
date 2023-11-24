@@ -102,6 +102,20 @@ public class Film implements Serializable{
 		this.poster = poster;
 	}
 	
+	public Film(String name, String directors, String actors, String genre, String duration, String description,
+			Integer ticketPrice, String poster, Date releaseDate) {
+		super();
+		this.name = name;
+		this.directors = directors;
+		this.actors = actors;
+		this.genre = genre;
+		this.duration = duration;
+		this.description = description;
+		this.ticketPrice = ticketPrice;
+		this.poster = poster;
+		this.releaseDate = releaseDate;
+	}
+	
 	
 	
 }
