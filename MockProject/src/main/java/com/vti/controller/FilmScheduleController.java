@@ -27,6 +27,7 @@ import com.vti.dto.FilmScheduleDTO;
 import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 import com.vti.form.filmSchedule.CreatingFilmSchedule;
+import com.vti.form.filmSchedule.CreatingFilmScheduleForFilm;
 import com.vti.form.filmSchedule.FilmScheduleFilterForm;
 import com.vti.form.filmSchedule.UpdatingFilmScheduleForm;
 import com.vti.service.IFilmScheduleService;
@@ -41,6 +42,9 @@ public class FilmScheduleController {
     private IFilmScheduleService service;
 	
 	@Autowired
+	private IFilmService filmService;
+	
+	@Autowired
 	private ModelMapper modelMapper;
 	
 	@PostMapping()
@@ -49,16 +53,14 @@ public class FilmScheduleController {
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
 	
-//	@PostMapping(value = "/{filmId}")
-//	public ResponseEntity<?> CreateFilmScheduleForFilm(@PathVariable(name = "filmId") Integer filmId, CreatingFilmSchedule form, FilmSchedule filmSchedule) {
-//		filmId = filmSchedule.getFilm().getFilmId();
-//		
-//		Film film = filmService.getFilmByID(filmId);
-//		
-//    	service.CreateFilmScheduleForFilm(film, form);
-//		
-//    	return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
-//    }
+	@PostMapping(value = "/create-for-film")
+	public ResponseEntity<?> CreateFilmScheduleForFilm(@RequestBody CreatingFilmScheduleForFilm form) {
+		Film film = filmService.getFilmByID(form.getFilmId());
+		
+    	service.CreateFilmScheduleForFilm(film, form);
+		
+    	return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
+    }
 	
 	@GetMapping()
 	public ResponseEntity<?> getAllFilmSchedules(
