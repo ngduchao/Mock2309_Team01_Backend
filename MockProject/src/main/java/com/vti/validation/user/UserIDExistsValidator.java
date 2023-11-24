@@ -1,4 +1,4 @@
-package com.vti.validation.film;
+package com.vti.validation.user;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -6,12 +6,13 @@ import javax.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
-import com.vti.service.IFilmService;
+import com.vti.service.IUserService;
 
-public class FilmIDExistsValidator implements ConstraintValidator<FilmIDExists, Integer>{
+
+public class UserIDExistsValidator implements ConstraintValidator<UserIDExists, Integer>{
 	
 	@Autowired
-	private IFilmService service;
+	private IUserService userService;
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -21,8 +22,7 @@ public class FilmIDExistsValidator implements ConstraintValidator<FilmIDExists, 
 			return true;
 		}
 		
-		return service.isFilmExistsByID(id);
+		return userService.isUserExistsByID(id);
 	}
-	
-	
+
 }

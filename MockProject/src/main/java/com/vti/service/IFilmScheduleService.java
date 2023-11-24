@@ -9,6 +9,7 @@ import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 //import com.vti.form.filmschedule.UpdatingFilmScheduleForm;
 import com.vti.form.filmSchedule.CreatingFilmSchedule;
+import com.vti.form.filmSchedule.CreatingFilmScheduleForFilm;
 import com.vti.form.filmSchedule.FilmScheduleFilterForm;
 import com.vti.form.filmSchedule.UpdatingFilmScheduleForm;
 
@@ -28,5 +29,5 @@ public interface IFilmScheduleService {
 	
 	public List<FilmSchedule> getFilmScheduleByFilm(Integer filmId);
 	
-//	public void CreateFilmScheduleForFilm (Film film ,CreatingFilmSchedule form);
+	public void CreateFilmScheduleForFilm (Film film ,CreatingFilmScheduleForFilm form);
 }

@@ -3,6 +3,7 @@ package com.vti.service;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,9 +14,11 @@ import org.springframework.security.core.Authentication;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.vti.dto.LoginInfoUser;
+import com.vti.entity.Role;
 import com.vti.entity.User;
 import com.vti.entity.UserStatus;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -28,10 +31,11 @@ public class JWTTokenService {
 
     public static void addJWTTokenAndUserInfoToBody(HttpServletResponse response, User user) throws IOException {
         String JWT = Jwts.builder()
+        		.setId(String.valueOf(user.getId()))
                 .setSubject(user.getUsername())
-//                .setSubject(user.getUsername() + " " + user.getRole().toString())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET)
+                .claim("Role", user.getRole().name())
                 .compact();
         
         // convert user entity to user dto
@@ -62,18 +66,19 @@ public class JWTTokenService {
         if (token == null) {
         	return null;
         }
-        
-        
-        
-        // parse the token
+
+        // giải mã token
         String username = Jwts.parser()
                 .setSigningKey(SECRET)
-                .parseClaimsJws(token.replace(PREFIX_TOKEN, ""))
+                .parseClaimsJws(token.replace(PREFIX_TOKEN, "").trim())
                 .getBody()
                 .getSubject();
-
+        
+        System.out.println("==================================================" + token);
+        
         return username != null ?
-                new UsernamePasswordAuthenticationToken(username, null, Collections.emptyList()) :
-                null;
+        new UsernamePasswordAuthenticationToken(username, null, Collections.emptyList()) :
+        null;
     }
+
 }

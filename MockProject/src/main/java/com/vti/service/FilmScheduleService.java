@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.vti.entity.Film;
 import com.vti.entity.FilmSchedule;
 import com.vti.form.filmSchedule.CreatingFilmSchedule;
+import com.vti.form.filmSchedule.CreatingFilmScheduleForFilm;
 import com.vti.form.filmSchedule.FilmScheduleFilterForm;
 import com.vti.form.filmSchedule.UpdatingFilmScheduleForm;
 import com.vti.repository.IFilmRepository;
@@ -43,6 +44,14 @@ public class FilmScheduleService implements IFilmScheduleService {
 	@Override
 	public void updateFilmSchedule(Integer scheduleId, UpdatingFilmScheduleForm form) {
 		FilmSchedule entity = repository.getById(scheduleId);
+		
+		if(form.getSeatNumber() == null) {
+			form.setSeatNumber(entity.getSeatNumber());
+		}
+		if(form.getTimeSlot() == null) {
+			form.setTimeSlot(entity.getTimeSlot());
+		}
+		
 		entity.setSeatNumber(form.getSeatNumber());
 		entity.setTimeSlot(form.getTimeSlot());
 		repository.save(entity);
@@ -73,12 +82,12 @@ public class FilmScheduleService implements IFilmScheduleService {
 		return filmSchedules;
 	}
 
-//	@Override
-//	public void CreateFilmScheduleForFilm(Film film, CreatingFilmSchedule form) {
-//		FilmSchedule filmSchedule = form.toEntity();
-//		
-//		filmSchedule.setFilm(film);
-//		
-//		repository.save(filmSchedule);
-//	}
+	@Override
+	public void CreateFilmScheduleForFilm(Film film, CreatingFilmScheduleForFilm form) {
+		FilmSchedule filmSchedule = form.toEntity();
+		
+		filmSchedule.setFilm(film);
+		
+		repository.save(filmSchedule);
+	}
 }

@@ -2,6 +2,8 @@ package com.vti.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +28,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vti.dto.FilmDTO;
-import com.vti.dto.UserInfo;
 import com.vti.entity.Film;
 import com.vti.entity.User;
 import com.vti.filter.FilmFilterForm;
@@ -38,6 +40,7 @@ import com.vti.validation.film.FilmIDExists;
 @CrossOrigin("*")
 @RestController
 @RequestMapping(value = "api/v1/films")
+@Validated
 public class FilmController {
 	@Autowired
 	private IFilmService service;
@@ -84,14 +87,14 @@ public class FilmController {
 	}
 	
 	@PutMapping(value = "{id}")
-	public ResponseEntity<?> updateFilm(@PathVariable(name = "id") Integer id, @RequestBody UpdatingFilmForm form){
+	public ResponseEntity<?> updateFilm(@PathVariable(name = "id") @FilmIDExists Integer id,@Valid @RequestBody UpdatingFilmForm form){
 		
 		service.updateFilm(id, form);
 		return new ResponseEntity<>("Update Successfully!", HttpStatus.OK);
 	}
 	
 	@PostMapping()
-	public ResponseEntity<?> createFilm(@RequestBody CreatingFilmForm form, Authentication authentication){
+	public ResponseEntity<?> createFilm(@Valid @RequestBody CreatingFilmForm form, Authentication authentication){
 		
 		String username = authentication.getName();
 		

@@ -36,6 +36,7 @@ import com.vti.form.user.CreatingUserByAdminForm;
 import com.vti.form.user.CreatingUserForm;
 import com.vti.form.user.UpdatingUserForm;
 import com.vti.service.IUserService;
+import com.vti.validation.user.UserIDExists;
 
 @CrossOrigin("*")
 @RestController
@@ -68,7 +69,7 @@ public class UserController {
 			
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<?> getUserByID(@PathVariable(name = "id") Integer id){
+	public ResponseEntity<?> getUserByID(@PathVariable(name = "id") @UserIDExists Integer id){
 		
 		User entity = service.getUserByID(id);
 		
@@ -103,7 +104,7 @@ public class UserController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<?> updateUser(@PathVariable(name = "id") Integer id, @Valid @RequestBody UpdatingUserForm form){
+	public ResponseEntity<?> updateUser(@PathVariable(name = "id") @UserIDExists Integer id, @Valid @RequestBody UpdatingUserForm form){
 		service.updateUser(id, form);
 		
 		return new ResponseEntity<>("Update Successfully!", HttpStatus.OK);
