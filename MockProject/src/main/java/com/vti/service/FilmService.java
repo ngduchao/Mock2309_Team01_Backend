@@ -1,5 +1,7 @@
 package com.vti.service;
 
+import java.io.Console;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,11 +54,14 @@ public class FilmService implements IFilmService {
 	@Override
 	@Transactional
 	public void createFilm(User user, CreatingFilmForm form) {
+	
 		Film film = form.toEntity();
-		
+		System.out.println(film);
+		//System.out.println(user);
 		film.setUser(user);
+		//System.out.println(film);
+		Film saved = repository.save(film);
 		
-		repository.save(film);
 	}
 
 	public void updateFilm(Integer id, UpdatingFilmForm form) {

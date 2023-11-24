@@ -149,10 +149,10 @@ public class UserService implements IUserService,UserDetailsService{
 		repository.save(user);
 
 		// create new user registration token
-		createNewRegistrationUserToken(user);
+		//createNewRegistrationUserToken(user);
 
 		// send email to confirm
-		sendConfirmUserRegistrationViaEmail(user.getEmail());
+		//sendConfirmUserRegistrationViaEmail(user.getEmail());
 	}
 	
 	@Override

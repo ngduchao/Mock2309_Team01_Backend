@@ -1,11 +1,20 @@
 package com.vti.form.film;
 
+<<<<<<< HEAD
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+=======
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+>>>>>>> 05e0f3adf855167a4a3462692b9013eceaea1c7b
 import com.vti.entity.Film;
 import com.vti.validation.film.FilmNameNotExists;
 
@@ -48,7 +57,12 @@ public class CreatingFilmForm {
 	@NotBlank(message = "The poster mustn't be null value")
 	private String poster;
 	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date releaseDate;
+	
 	public Film toEntity() {
-		return new Film(name, directors, actors, genre, duration, description, ticketPrice, poster);
+		
+		return new Film(name, directors, actors, genre, duration, description, ticketPrice, poster, releaseDate);
+
 	}
 }

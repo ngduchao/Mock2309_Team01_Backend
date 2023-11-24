@@ -40,7 +40,11 @@ import com.vti.validation.film.FilmIDExists;
 @CrossOrigin("*")
 @RestController
 @RequestMapping(value = "api/v1/films")
+<<<<<<< HEAD
 @Validated
+=======
+
+>>>>>>> 05e0f3adf855167a4a3462692b9013eceaea1c7b
 public class FilmController {
 	@Autowired
 	private IFilmService service;
@@ -100,6 +104,7 @@ public class FilmController {
 		
 		User userInfo = userService.findUserByUsername(username);
 		
+		System.out.println(form);
 		service.createFilm(userInfo, form);
 		
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);

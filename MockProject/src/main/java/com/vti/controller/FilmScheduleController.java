@@ -45,6 +45,9 @@ public class FilmScheduleController {
     private IFilmScheduleService service;
 	
 	@Autowired
+	private IFilmService filmService;
+	
+	@Autowired
 	private ModelMapper modelMapper;
 	
 	@Autowired
@@ -57,7 +60,11 @@ public class FilmScheduleController {
 	}
 	
 	@PostMapping(value = "/create-for-film")
+<<<<<<< HEAD
 	public ResponseEntity<?> CreateFilmScheduleForFilm(@Valid @RequestBody CreatingFilmScheduleForFilm form) {
+=======
+	public ResponseEntity<?> CreateFilmScheduleForFilm(@RequestBody CreatingFilmScheduleForFilm form) {
+>>>>>>> 05e0f3adf855167a4a3462692b9013eceaea1c7b
 		Film film = filmService.getFilmByID(form.getFilmId());
 		
     	service.CreateFilmScheduleForFilm(film, form);

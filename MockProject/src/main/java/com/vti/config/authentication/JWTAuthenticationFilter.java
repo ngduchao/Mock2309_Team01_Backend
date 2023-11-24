@@ -40,7 +40,7 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
     		HttpServletRequest request, 
     		HttpServletResponse response) 
     		throws AuthenticationException, IOException, ServletException {
-        
+       
         return getAuthenticationManager().authenticate(
                 new UsernamePasswordAuthenticationToken(
                 		request.getParameter("username"),
