@@ -1,6 +1,12 @@
 package com.vti.dto;
 
+import java.util.Date;
 import java.util.List;
+
+import com.vti.entity.Ticket.TicketKey;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.vti.entity.Role;
+import com.vti.entity.User;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,9 +27,36 @@ public class UserDTO {
 	
 	private String lastName;
 	
-	private String role;
+	private Role role;
 	
-	private List<FilmDTO> films;
+	private List<FilmInfoDTO> films;
 	
 	private List<TicketDTO> tickets;
+	
+	@Data
+	@NoArgsConstructor
+	public static class FilmInfoDTO{
+		
+		private Integer filmId;
+		
+		private String name;
+	}
+	
+	@Data
+	@NoArgsConstructor
+	public static class TicketDTO{
+		
+		private TicketKey id;
+		
+		private Integer quantity;
+		
+		private Integer total;
+		
+		@JsonFormat(pattern = "yyyy-MM-dd")
+		private Date bookingDate;
+	}
+	
+	public User toEntity() {
+		return new User(username, email, password, firstName, lastName);
+	}
 }

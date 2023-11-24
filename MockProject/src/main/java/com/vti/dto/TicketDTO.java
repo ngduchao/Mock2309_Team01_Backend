@@ -1,5 +1,10 @@
 package com.vti.dto;
 
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.vti.entity.Ticket.TicketKey;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,13 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TicketDTO {
 	
-	private Integer id;
+	private TicketKey id;
 	
 	private Integer quantity;
 	
 	private Integer total;
 	
-	private Integer creatorId;
-	
-	private Integer filmScheduleId;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date bookingDate;
 }

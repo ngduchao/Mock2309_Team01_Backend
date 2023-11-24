@@ -32,7 +32,7 @@ public class FilmSpecification {
 		}
 		
 		//filter
-		if(filter == null) {
+		if(filter == null || filter.getGenre() == "") {
 			return where;
 		}
 		
@@ -69,7 +69,7 @@ class CustomSpecification implements Specification<Film>{
 		}
 		
 		if(field.equalsIgnoreCase("genre")) {
-			return criteriaBuilder.equal(root.get("genre"), value);
+			return criteriaBuilder.like(root.get("genre"), "%" + value.toString() + "%");
 		}
 		
 		return null;

@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.vti.entity.Film;
-import com.vti.entity.FilmSchedule;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,17 +26,34 @@ public class FilmDTO {
 	
 	private String description;
 	
-	@JsonFormat(pattern = "dd-MM-yyyy")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date releaseDate;
 	
 	private Integer ticketPrice;
 	
 	private String poster;
 	
-	private Integer creatorId;
+	private UserInfoDTO user; //thông tin user dùng 1 DTO để hiển thị
 	
-	private String username;
+	private List<FilmScheduleInfoDTO> filmSchedules;
+		
+	@Data
+	@NoArgsConstructor
+	public static class UserInfoDTO {
+		
+		private Integer id;
+		
+		private String username;
+	}
 	
-	private List<FilmScheduleDTO> filmSchedules;
-	
+	@Data
+	@NoArgsConstructor
+	public static class FilmScheduleInfoDTO{
+		
+		private Integer scheduleId;
+		
+		@JsonFormat(pattern = "yyyy-MM-dd")
+		private Date timeSlot;
+	}
 }
+

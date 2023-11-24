@@ -20,7 +20,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.vti.dto.UserDTO.FilmInfoDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -65,37 +65,12 @@ public class FilmSchedule implements Serializable{
 		this.film = film;
 	}
 
-	public Integer getScheduleId() {
-		return scheduleId;
-	}
-
-	public void setScheduleId(Integer scheduleId) {
-		this.scheduleId = scheduleId;
-	}
-
-	public Integer getSeatNumber() {
-		return seatNumber;
-	}
-
-	public void setSeatNumber(Integer seatNumber) {
+	public FilmSchedule(Integer seatNumber, Date timeSlot) {
+		super();
 		this.seatNumber = seatNumber;
-	}
-
-	public Date getTimeSlot() {
-		return timeSlot;
-	}
-
-	public void setTimeSlot(Date timeSlot) {
 		this.timeSlot = timeSlot;
 	}
 
-	public Film getFilm() {
-		return film;
-	}
-
-	public void setFilm(Film film) {
-		this.film = film;
-	}
 	
 	
 }
