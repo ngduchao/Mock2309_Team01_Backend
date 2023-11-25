@@ -19,7 +19,7 @@ import javax.validation.Payload;
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 @Retention(RUNTIME)
 @Documented
-@Constraint(validatedBy = { UsernameNotExistsValidator.class })
+@Constraint(validatedBy = { UserIDExistsValidator.class })
 @Repeatable(UserIDExists.List.class)
 public @interface UserIDExists {
 
