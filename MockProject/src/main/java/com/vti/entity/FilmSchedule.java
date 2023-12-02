@@ -44,7 +44,7 @@ public class FilmSchedule implements Serializable{
 	
 	@Column(name = "time_slot", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
-	@CreationTimestamp
+//	@CreationTimestamp
 	private Date timeSlot;
 	
 //	@JsonBackReference
