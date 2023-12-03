@@ -100,6 +100,7 @@ public class FilmController {
 		
 		User userInfo = userService.findUserByUsername(username);
 		
+		System.out.println(form);
 		service.createFilm(userInfo, form);
 		
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);

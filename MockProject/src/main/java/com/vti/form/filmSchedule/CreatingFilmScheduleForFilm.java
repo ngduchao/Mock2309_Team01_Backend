@@ -14,6 +14,4 @@ public class CreatingFilmScheduleForFilm extends CreatingFilmSchedule{
 	@NotNull(message = "The film id mustn't be null value")
 	@FilmIDExists
 	private Integer filmId;
-	
-	
 }

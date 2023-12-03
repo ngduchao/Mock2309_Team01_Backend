@@ -66,8 +66,6 @@ public class JWTTokenService {
         if (token == null) {
         	return null;
         }
-
-        // giải mã token
         String username = Jwts.parser()
                 .setSigningKey(SECRET)
                 .parseClaimsJws(token.replace(PREFIX_TOKEN, "").trim())
