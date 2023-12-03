@@ -2,6 +2,8 @@ package com.vti.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,7 @@ import com.vti.form.filmSchedule.FilmScheduleFilterForm;
 import com.vti.form.filmSchedule.UpdatingFilmScheduleForm;
 import com.vti.service.IFilmScheduleService;
 import com.vti.service.IFilmService;
+import com.vti.validation.film.FilmIDExists;
 import com.vti.validation.filmSchedule.FilmScheduleIDExists;
 
 @CrossOrigin("*")
@@ -47,14 +50,17 @@ public class FilmScheduleController {
 	@Autowired
 	private ModelMapper modelMapper;
 	
+	@Autowired
+	private IFilmService filmService;
+	
 	@PostMapping()
-	public ResponseEntity<?> createFilmSchedule(@RequestBody CreatingFilmSchedule form){
+	public ResponseEntity<?> createFilmSchedule(@Valid @RequestBody CreatingFilmSchedule form){
 		service.createFilmSchedule(form);
 		return new ResponseEntity<String>("Create successfully!", HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/create-for-film")
-	public ResponseEntity<?> CreateFilmScheduleForFilm(@RequestBody CreatingFilmScheduleForFilm form) {
+	public ResponseEntity<?> CreateFilmScheduleForFilm(@Valid @RequestBody CreatingFilmScheduleForFilm form) {
 		Film film = filmService.getFilmByID(form.getFilmId());
 		
     	service.CreateFilmScheduleForFilm(film, form);
@@ -77,7 +83,7 @@ public class FilmScheduleController {
 	}
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<?> getFilmScheduleById(@PathVariable(name = "id") Integer id) {
+    public ResponseEntity<?> getFilmScheduleById(@FilmScheduleIDExists @PathVariable(name = "id") Integer id) {
     	FilmSchedule entity = service.getFilmScheduleByID(id);
 		
 		FilmScheduleDTO dto = modelMapper.map(entity, FilmScheduleDTO.class);
@@ -86,7 +92,7 @@ public class FilmScheduleController {
     }
     
     @GetMapping(value = "/list/{filmId}")
-    public ResponseEntity<?> getFilmScheduleByFilm(@PathVariable(name = "filmId") Integer filmId){
+    public ResponseEntity<?> getFilmScheduleByFilm(@PathVariable(name = "filmId") @FilmIDExists Integer filmId){
     	
     	List<FilmSchedule> filmSchedules = service.getFilmScheduleByFilm(filmId);
     	
@@ -97,7 +103,7 @@ public class FilmScheduleController {
     }
     
     @PutMapping(value = "/{id}")
-	public ResponseEntity<?> updateFilmSchedule(@PathVariable(name = "id") Integer scheduleId, @RequestBody UpdatingFilmScheduleForm form){
+	public ResponseEntity<?> updateFilmSchedule(@FilmScheduleIDExists @PathVariable(name = "id") Integer scheduleId, @Valid @RequestBody UpdatingFilmScheduleForm form){
 		service.updateFilmSchedule(scheduleId, form);
 		return new ResponseEntity<>("Update Successfully!", HttpStatus.OK);
 	}

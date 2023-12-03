@@ -66,6 +66,31 @@ public class FilmService implements IFilmService {
 
 	public void updateFilm(Integer id, UpdatingFilmForm form) {
 		Film entity = repository.getById(id);
+
+		if(form.getName() == null) {
+			form.setName(entity.getName());
+		}
+		if(form.getDirectors() == null) {
+			form.setDirectors(entity.getDirectors());
+		}
+		if(form.getActors() == null) {
+			form.setActors(entity.getActors());
+		}
+		if(form.getGenre() == null) {
+			form.setGenre(entity.getGenre());
+		}
+		if(form.getDuration() == null) {
+			form.setDuration(entity.getDuration());
+		}
+		if(form.getDescription() == null) {
+			form.setDescription(entity.getDescription());
+		}
+		if(form.getTicketPrice() == null) {
+			form.setTicketPrice(entity.getTicketPrice());
+		}
+		if(form.getPoster() == null) {
+			form.setPoster(entity.getPoster());
+		}
 		
 		entity.setName(form.getName());
 		entity.setDirectors(form.getDirectors());
@@ -77,13 +102,6 @@ public class FilmService implements IFilmService {
 		entity.setPoster(form.getPoster());
 		
 		repository.save(entity);
-	}
-//
-//	@Override
-//	@Transactional
-//	public void deleteFilms(List<Integer> ids) {
-//		repository.deleteByIdIn(ids);
-//	}
-	
+	}	
 }
 

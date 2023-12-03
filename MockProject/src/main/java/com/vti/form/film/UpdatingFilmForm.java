@@ -1,5 +1,6 @@
 package com.vti.form.film;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -13,34 +14,27 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UpdatingFilmForm {
 	
-	@NotBlank(message = "{Film.createFilm.form.name.NotBlank}")
-	@Length(max = 100, message = "{Film.createFilm.form.name.Length}")
-	@FilmNameNotExists(message = "{Film.createFilm.form.name.NotExists}")
+	@Length(max = 100, message = "The film name's length is max 100 characters")
+//	@FilmNameNotExists
 	private String name;
 	
-	@NotBlank(message = "{Film.createFilm.form.directors.NotBlank}")
-	@Length(max = 50, message = "{Film.createFilm.form.directors.Length}")
+	@Length(max = 50, message = "The directors's length is max 50 characters")
+	@Length(min = 6, message = "The directors's length is min 6 characters")
 	private String directors;
 	
-	@NotBlank(message = "{Film.createFilm.form.actors.NotBlank}")
-	@Length(max = 200, message = "{Film.createFilm.form.actors.Length}")
+	@Length(max = 200, message = "The actors's length is max 200 characters")
 	private String actors;
 	
-	@NotBlank(message = "{Film.createFilm.form.genre.NotBlank}")
-	@Length(max = 100, message = "{Film.createFilm.form.genre.Length}")
+	@Length(max = 100, message = "The genre's length is max 100 characters")
 	private String genre;
 	
-	@NotBlank(message = "{Film.createFilm.form.duration.NotBlank}")
-	@Length(max = 30, message = "{Film.createFilm.form.duration.Length}")
+	@Length(max = 30, message = "The duration's length is max 30 characters")
 	private String duration;
 	
-	@NotBlank(message = "{Film.createFilm.form.description.NotBlank}")
-	@Length(max = 200, message = "{Film.createFilm.form.description.Length}")
 	private String description;
 	
-	@NotBlank(message = "{Film.createFilm.form.ticketPrice.NotBlank}")
+	@Min(value = 0, message = "The ticket price must greater than 0 VND")
 	private Integer ticketPrice;
 	
-	@NotBlank(message = "{Film.createFilm.form.poster.NotBlank}")
 	private String poster;
 }

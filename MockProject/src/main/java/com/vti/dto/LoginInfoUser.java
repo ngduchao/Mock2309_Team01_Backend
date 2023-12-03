@@ -1,10 +1,13 @@
 package com.vti.dto;
 
 import com.vti.entity.Role;
+import com.vti.entity.User;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class LoginInfoUser {
 
 	private Integer id;

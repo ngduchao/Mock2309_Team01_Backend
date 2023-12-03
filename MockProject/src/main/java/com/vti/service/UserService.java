@@ -1,5 +1,6 @@
 package com.vti.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -9,7 +10,9 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -126,9 +129,11 @@ public class UserService implements IUserService,UserDetailsService{
 		if (user == null) {
 			throw new UsernameNotFoundException(username);
 		}
+		
+		List<GrantedAuthority> authorities = new ArrayList<>();
+		authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
 
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-				AuthorityUtils.createAuthorityList(user.getRole().name()));
+		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),authorities);
 	}
 	
 

@@ -2,6 +2,8 @@ package com.vti.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vti.dto.TicketDTO;
-import com.vti.dto.TicketInfoDTO;
 import com.vti.entity.Ticket;
 import com.vti.entity.User;
 import com.vti.form.ticket.CreatingTicketForm;
@@ -30,6 +31,7 @@ import com.vti.form.ticket.TicketFilterForm;
 import com.vti.form.ticket.UpdatingTicketForm;
 import com.vti.service.ITicketService;
 import com.vti.service.IUserService;
+import com.vti.validation.filmSchedule.FilmScheduleIDExists;
 
 @CrossOrigin("*")
 @RestController
@@ -72,8 +74,8 @@ public class TicketController {
 	@PutMapping(value = "/{filmScheduleId}")
 	public ResponseEntity<?> updateTicket(
 			Authentication authentication, 
-			@PathVariable(name = "filmScheduleId") Integer filmScheduleId, 
-			@RequestBody UpdatingTicketForm form){
+			@FilmScheduleIDExists @PathVariable(name = "filmScheduleId") Integer filmScheduleId, 
+			@Valid @RequestBody UpdatingTicketForm form){
 		
 		User user = userService.findUserByUsername(authentication.getName());
 		
@@ -83,9 +85,9 @@ public class TicketController {
 	}
 	
 	@DeleteMapping(value = "/{filmScheduleId}")
-	public ResponseEntity<?> deleteUser(
+	public ResponseEntity<?> deleteTicketOfUser(
 			Authentication authentication, 
-			@PathVariable(name = "filmScheduleId") Integer filmScheduleId){
+			@FilmScheduleIDExists @PathVariable(name = "filmScheduleId") Integer filmScheduleId){
 		
 		User user = userService.findUserByUsername(authentication.getName());
 		
@@ -95,7 +97,7 @@ public class TicketController {
 	}
 	
 	@PostMapping()
-    public ResponseEntity<?> createTicket(Authentication authentication, @RequestBody CreatingTicketForm form) {
+    public ResponseEntity<?> createTicket(Authentication authentication, @Valid @RequestBody CreatingTicketForm form) {
 		
         String username = authentication.getName();
         

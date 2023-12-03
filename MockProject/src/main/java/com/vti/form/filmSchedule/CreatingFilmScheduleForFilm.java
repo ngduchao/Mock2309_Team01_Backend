@@ -10,9 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CreatingFilmScheduleForFilm extends CreatingFilmSchedule{
-	@NotNull
+	
+	@NotNull(message = "The film id mustn't be null value")
 	@FilmIDExists
 	private Integer filmId;
-	
-	
 }

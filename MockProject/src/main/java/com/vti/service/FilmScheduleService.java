@@ -44,6 +44,14 @@ public class FilmScheduleService implements IFilmScheduleService {
 	@Override
 	public void updateFilmSchedule(Integer scheduleId, UpdatingFilmScheduleForm form) {
 		FilmSchedule entity = repository.getById(scheduleId);
+		
+		if(form.getSeatNumber() == null) {
+			form.setSeatNumber(entity.getSeatNumber());
+		}
+		if(form.getTimeSlot() == null) {
+			form.setTimeSlot(entity.getTimeSlot());
+		}
+		
 		entity.setSeatNumber(form.getSeatNumber());
 		entity.setTimeSlot(form.getTimeSlot());
 		repository.save(entity);
