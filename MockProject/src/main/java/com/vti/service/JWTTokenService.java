@@ -74,7 +74,7 @@ public class JWTTokenService {
                 .getBody()
                 .getSubject();
         
-        System.out.println("==================================================" + token);
+//        System.out.println("==================================================" + token);
         
         return username != null ?
         new UsernamePasswordAuthenticationToken(username, null, Collections.emptyList()) :

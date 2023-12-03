@@ -85,7 +85,7 @@ public class TicketController {
 	}
 	
 	@DeleteMapping(value = "/{filmScheduleId}")
-	public ResponseEntity<?> deleteUser(
+	public ResponseEntity<?> deleteTicketOfUser(
 			Authentication authentication, 
 			@FilmScheduleIDExists @PathVariable(name = "filmScheduleId") Integer filmScheduleId){
 		

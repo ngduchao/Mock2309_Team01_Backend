@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class UpdatingFilmForm {
 	
 	@Length(max = 100, message = "The film name's length is max 100 characters")
-	@FilmNameNotExists
+//	@FilmNameNotExists
 	private String name;
 	
 	@Length(max = 50, message = "The directors's length is max 50 characters")

@@ -7,9 +7,11 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.HttpClientErrorException.Unauthorized;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -44,7 +46,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers("/api/v1/film-schedules/**").permitAll()
 		.antMatchers("/api/v1/tickets/**").permitAll()
 //		.antMatchers("/api/v1/users/**").hasAnyAuthority("Admin")
-//		.antMatchers("/api/v1/films/**").hasAnyAuthority("Manager", "Admin")
+//		.antMatchers("/api/v1/films/**").hasAnyRole("Manager", "Admin")
 		.anyRequest().authenticated()
 		.and()
 		.httpBasic()

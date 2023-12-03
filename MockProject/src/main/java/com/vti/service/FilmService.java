@@ -61,7 +61,7 @@ public class FilmService implements IFilmService {
 
 	public void updateFilm(Integer id, UpdatingFilmForm form) {
 		Film entity = repository.getById(id);
-		
+
 		if(form.getName() == null) {
 			form.setName(entity.getName());
 		}
