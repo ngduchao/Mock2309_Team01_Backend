@@ -45,9 +45,6 @@ public class FilmScheduleController {
     private IFilmScheduleService service;
 	
 	@Autowired
-	private IFilmService filmService;
-	
-	@Autowired
 	private ModelMapper modelMapper;
 	
 	@Autowired

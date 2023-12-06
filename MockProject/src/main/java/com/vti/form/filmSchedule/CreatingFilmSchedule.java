@@ -1,12 +1,14 @@
 package com.vti.form.filmSchedule;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.vti.dto.UserDTO.FilmInfoDTO;
 import com.vti.entity.FilmSchedule;
 
 import lombok.Data;
