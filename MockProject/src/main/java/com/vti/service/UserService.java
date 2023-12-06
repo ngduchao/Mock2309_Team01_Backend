@@ -94,13 +94,13 @@ public class UserService implements IUserService,UserDetailsService{
 		
 		User entity = repository.findById(id).get();
 		
-		if(form.getEmail() == null) {
+		if(form.getEmail() == null || form.getEmail().isEmpty()) {
 			form.setEmail(entity.getEmail());
 		}
-		if(form.getFirstName() == null) {
+		if(form.getFirstName() == null || form.getFirstName().isEmpty()) {
 			form.setFirstName(entity.getFirstName());
 		}
-		if(form.getLastName() == null) {
+		if(form.getLastName() == null || form.getLastName().isEmpty()) {
 			form.setLastName(entity.getLastName());
 		}
 		
