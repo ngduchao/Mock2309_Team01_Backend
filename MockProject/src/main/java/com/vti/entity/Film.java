@@ -101,7 +101,4 @@ public class Film implements Serializable{
 		this.ticketPrice = ticketPrice;
 		this.poster = poster;
 	}
-	
-	
-	
 }
